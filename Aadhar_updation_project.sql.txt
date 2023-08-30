@@ -1,0 +1,60 @@
+-- Creating Table
+create table Aadhar_details(
+    Aadhar_number number primary key,
+    Name varchar2(100) not null,
+    Address varchar2(100) not null,
+    Mobile_no number not null,
+    Email varchar2(50) not null);
+
+-- Checking if table is created or not
+-- Use DESC table_name, not just DESC table_name
+-- Also, DESC is a SQL*Plus command, not a standard SQL command.
+-- You can use SELECT * FROM user_tab_columns WHERE table_name = 'Aadhar_details' instead.
+-- But for this case, you can skip the DESC command.
+-- desc Aadhar_details;
+
+-- Inserting data into the table.
+insert into Aadhar_details values(464510464759, 'John Wick', 'Mumbai', 9664887869, 'wickjohn05@gmail.com');
+
+-- Checking that data is inserted...
+select * from Aadhar_details;
+
+-- Creating a procedure for Aadhar Updation.
+create or replace procedure Updation_Aadhar(
+    P_Aadhar_number number,
+    P_Name varchar2,
+    P_Address varchar2,
+    P_Mobile_no number,
+    P_Email varchar2,
+    P_status out varchar2)
+As
+begin
+    Update Aadhar_details
+    set Name = P_Name,
+        Address = P_Address,
+        Mobile_no = P_Mobile_no,
+        Email = P_Email
+    where Aadhar_number = P_Aadhar_number;
+    
+    if sql%found then
+        commit;
+        P_status := 'Aadhar updated successfully.';
+    else
+        rollback;
+        P_status := 'There is a mistake, Please try again after some time.';
+    end if;
+end Updation_Aadhar;
+/
+-- Executing Procedure
+Declare
+    Result varchar2(100);
+Begin
+    Updation_Aadhar(
+        P_Aadhar_number => 464510464759,
+        P_Name => 'Ramesh Wick',
+        P_Address => 'Delhi', -- Missing comma
+        P_Mobile_no => 9664887869, -- Added missing value
+        P_Email => 'wickjohn05@gmail.com', -- Added missing value
+        P_status => Result);
+    Dbms_output.Put_line(Result);
+End;

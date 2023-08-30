@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://livesql.oracle.com/apex/f?p=590:1:110986652131053::::: -->
+<html class="page-1 app-LIVESQL" lang="en" data-be-installed="true" style="--js-sticky-top: 60px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.ͼ1.cm-focused {outline: 1px dotted #212121;}
+.ͼ1 {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; flex-shrink: 0; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 6px;}
+.ͼ1 .cm-layer > * {position: absolute;}
+.ͼ1 .cm-layer {position: absolute; left: 0; top: 0; contain: size style;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {pointer-events: none;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {opacity: 0;}}
+@keyframes cm-blink2 {50% {opacity: 0;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #444;}
+.ͼ1 .cm-dropCursor {position: absolute;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer .cm-cursor {display: block;}
+.ͼ2 .cm-activeLine {background-color: #cceeff44;}
+.ͼ3 .cm-activeLine {background-color: #99eeff33;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-gutters {flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; inset-inline-start: 0; z-index: 200;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #6c6c6c; border-right: 1px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-widgetBuffer {vertical-align: text-top; height: 1em; width: 0; display: inline;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top;}
+.ͼ1 .cm-highlightSpace:before {content: attr(data-display); position: absolute; pointer-events: none; color: #888;}
+.ͼ1 .cm-highlightTab {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" d="M1 10H196L190 5M190 15L196 10M197 4L197 16"/></svg>'); background-size: auto 100%; background-position: right 90%; background-repeat: no-repeat;}
+.ͼ1 .cm-trailingSpace {background-color: #ff332255;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .cm-selectionMatch {background-color: #99ff7780;}
+.ͼ1 .cm-searchMatch .cm-selectionMatch {background-color: transparent;}
+.ͼ1.cm-focused .cm-matchingBracket {background-color: #328c8252;}
+.ͼ1.cm-focused .cm-nonmatchingBracket {background-color: #bb555544;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter span {padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-diagnostic {padding: 3px 6px 3px 8px; margin-left: -1px; display: block; white-space: pre-wrap;}
+.ͼ1 .cm-diagnostic-error {border-left: 5px solid #d11;}
+.ͼ1 .cm-diagnostic-warning {border-left: 5px solid orange;}
+.ͼ1 .cm-diagnostic-info {border-left: 5px solid #999;}
+.ͼ1 .cm-diagnostic-hint {border-left: 5px solid #66d;}
+.ͼ1 .cm-diagnosticAction {font: inherit; border: none; padding: 2px 4px; background-color: #444; color: white; border-radius: 3px; margin-left: 8px; cursor: pointer;}
+.ͼ1 .cm-diagnosticSource {font-size: 70%; opacity: 0.7;}
+.ͼ1 .cm-lintRange {background-position: left bottom; background-repeat: repeat-x; padding-bottom: 0.7px;}
+.ͼ1 .cm-lintRange-error {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="3">%3Cpath%20d%3D%22m0%202.5%20l2%20-1.5%20l1%200%20l2%201.5%20l1%200%22%20stroke%3D%22%23d11%22%20fill%3D%22none%22%20stroke-width%3D%22.7%22%2F%3E</svg>');}
+.ͼ1 .cm-lintRange-warning {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="3">%3Cpath%20d%3D%22m0%202.5%20l2%20-1.5%20l1%200%20l2%201.5%20l1%200%22%20stroke%3D%22orange%22%20fill%3D%22none%22%20stroke-width%3D%22.7%22%2F%3E</svg>');}
+.ͼ1 .cm-lintRange-info {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="3">%3Cpath%20d%3D%22m0%202.5%20l2%20-1.5%20l1%200%20l2%201.5%20l1%200%22%20stroke%3D%22%23999%22%20fill%3D%22none%22%20stroke-width%3D%22.7%22%2F%3E</svg>');}
+.ͼ1 .cm-lintRange-hint {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="6" height="3">%3Cpath%20d%3D%22m0%202.5%20l2%20-1.5%20l1%200%20l2%201.5%20l1%200%22%20stroke%3D%22%2366d%22%20fill%3D%22none%22%20stroke-width%3D%22.7%22%2F%3E</svg>');}
+.ͼ1 .cm-lintRange-active {background-color: #ffdd9980;}
+.ͼ1 .cm-tooltip-lint {padding: 0; margin: 0;}
+.ͼ1 .cm-lintPoint:after {content: ""; position: absolute; bottom: 0; left: -2px; border-left: 3px solid transparent; border-right: 3px solid transparent; border-bottom: 4px solid #d11;}
+.ͼ1 .cm-lintPoint {position: relative;}
+.ͼ1 .cm-lintPoint-warning:after {border-bottom-color: orange;}
+.ͼ1 .cm-lintPoint-info:after {border-bottom-color: #999;}
+.ͼ1 .cm-lintPoint-hint:after {border-bottom-color: #66d;}
+.ͼ1 .cm-panel.cm-panel-lint ul [aria-selected] u {text-decoration: underline;}
+.ͼ1 .cm-panel.cm-panel-lint ul [aria-selected] {background-color: #ddd;}
+.ͼ1 .cm-panel.cm-panel-lint ul:focus [aria-selected] {background: #bdf; background-color: Highlight; color: white; color: HighlightText;}
+.ͼ1 .cm-panel.cm-panel-lint ul u {text-decoration: none;}
+.ͼ1 .cm-panel.cm-panel-lint ul {max-height: 100px; overflow-y: auto; padding: 0; margin: 0;}
+.ͼ1 .cm-panel.cm-panel-lint [name=close] {position: absolute; top: 0; right: 2px; background: inherit; border: none; font: inherit; padding: 0; margin: 0;}
+.ͼ1 .cm-panel.cm-panel-lint {position: relative;}
+.ͼ1 .cm-tooltip {z-index: 100; box-sizing: border-box;}
+.ͼ2 .cm-tooltip {border: 1px solid #bbb; background-color: #f5f5f5;}
+.ͼ2 .cm-tooltip-section:not(:first-child) {border-top: 1px solid #bbb;}
+.ͼ3 .cm-tooltip {background-color: #333338; color: white;}
+.ͼ1 .cm-tooltip-arrow:before, .ͼ1 .cm-tooltip-arrow:after {content: ''; position: absolute; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:before {border-top: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow:after {border-top: 7px solid #f5f5f5; bottom: 1px;}
+.ͼ1 .cm-tooltip-above .cm-tooltip-arrow {bottom: -7px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:before {border-bottom: 7px solid #bbb;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow:after {border-bottom: 7px solid #f5f5f5; top: 1px;}
+.ͼ1 .cm-tooltip-below .cm-tooltip-arrow {top: -7px;}
+.ͼ1 .cm-tooltip-arrow {height: 7px; width: 14px; position: absolute; z-index: -1; overflow: hidden;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:before {border-top-color: #333338; border-bottom-color: #333338;}
+.ͼ3 .cm-tooltip .cm-tooltip-arrow:after {border-top-color: transparent; border-bottom-color: transparent;}
+.ͼ5 {color: #404740;}
+.ͼ6 {text-decoration: underline;}
+.ͼ7 {text-decoration: underline; font-weight: bold;}
+.ͼ8 {font-style: italic;}
+.ͼ9 {font-weight: bold;}
+.ͼa {text-decoration: line-through;}
+.ͼb {color: #708;}
+.ͼc {color: #219;}
+.ͼd {color: #164;}
+.ͼe {color: #a11;}
+.ͼf {color: #e40;}
+.ͼg {color: #00f;}
+.ͼh {color: #30a;}
+.ͼi {color: #085;}
+.ͼj {color: #167;}
+.ͼk {color: #256;}
+.ͼl {color: #00c;}
+.ͼm {color: #940;}
+.ͼn {color: #f00;}
+.ͼ4 .cm-line ::selection {background-color: transparent !important;}
+.ͼ4 .cm-line::selection {background-color: transparent !important;}
+.ͼ4 .cm-line {caret-color: transparent !important;}
+</style>
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  
+  <title>SQL Worksheet</title>
+  <link rel="stylesheet" href="./Aadhar_updation_project_files/Core.min.css" type="text/css">
+<link rel="stylesheet" href="./Aadhar_updation_project_files/Theme-Standard.min.css" type="text/css">
+
+  <link rel="stylesheet" href="./Aadhar_updation_project_files/font-apex.min.css" type="text/css">
+<link rel="stylesheet" href="./Aadhar_updation_project_files/Core.min(1).css" type="text/css">
+
+  
+  <link rel="stylesheet" href="./Aadhar_updation_project_files/Vita.min.css" type="text/css">
+
+  <link rel="stylesheet" href="./Aadhar_updation_project_files/livesql.min.css" type="text/css">
+
+  <link rel="stylesheet" href="./Aadhar_updation_project_files/codeEditor.min.css" type="text/css">
+<style type="text/css">
+.t-Body-contentInner {
+    flex-grow: 1;
+    flex-basis: 0;
+    overflow: hidden;
+}
+
+.t-Body-contentInner2 {
+    overflow: hidden;
+}
+
+/* Preserve spacing inside of reports */
+.results-div .msg {
+    white-space: pre-wrap;
+}
+
+/* Remove alternating row style */
+.msg .u-Report tr:nth-child(even) td, 
+.msg .u-Report tr:nth-child(even) th[scope=row] {
+    background-color: #FFF;
+}
+
+/* default value of --worksheet-font-size */
+/* if the user preference is custom, this value will be overwritten by a custom style tag */
+:root {
+    --worksheet-font-size: 14px;
+}
+
+/* applying it to the editor */
+.cm-editor {
+    font-size: var(--worksheet-font-size);
+}
+
+/* applying it to the results container */
+#results {
+    font-size: var(--worksheet-font-size);
+}
+
+/* one of these classes can be applied to body based on the user preference */
+.worksheet-font-size-small {
+    --worksheet-font-size: 12px;
+}
+.worksheet-font-size-medium {
+    --worksheet-font-size: 14px;
+}
+.worksheet-font-size-large {
+    --worksheet-font-size: 16px;
+}
+
+/* important to slightly increase these values on mobile
+   on iOS for example the default (medium) should be 16px to avoid zooming when focusing
+ */
+@media screen and (max-width: 640px) {
+    .worksheet-font-size-small {
+        --worksheet-font-size: 14px;
+    }
+    .worksheet-font-size-medium {
+        --worksheet-font-size: 16px;
+    }
+    .worksheet-font-size-large {
+        --worksheet-font-size: 18px;
+    }
+}
+</style>
+
+  <link rel="apple-touch-icon" href="https://livesql.oracle.com/apex/r/livesql/590/files/static/v430/icons/app-icon-192.png"><link rel="icon" href="https://livesql.oracle.com/apex/r/livesql/590/files/static/v430/icons/app-icon-32.png">
+  
+
+<meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="-1"><meta http-equiv="Cache-Control" content="no-cache"><meta name="theme-color" content="#000000">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="&lt;span class=&quot;u-vh&quot;&gt;Oracle&lt;/span&gt; &amp;APPLICATION_TITLE.">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="https://livesql.oracle.com/apex/r/livesql/livesql/manifest.json?v=22.1.3-142154676794&amp;lang=en">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="BUM28-7GUGJ-B7YY7-XUSPX-EJ96D",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"BUM28-7GUGJ-B7YY7-XUSPX-EJ96D";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="eqcqeak4boqyijqacqh5yaabujso5zbt-f-52ed1cf48-clienttons-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"36","ak.cp":"881309","ak.ai":parseInt("562634",10),"ak.ol":"0","ak.cr":31,"ak.ipv":6,"ak.proto":"h2","ak.rid":"296bd60","ak.r":37095,"ak.a2":n,"ak.m":"dscx","ak.n":"essl","ak.bpcip":"2405:201:5c0b:a184::","ak.cport":64929,"ak.gh":"49.44.117.174","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1693377587","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==y4zfIISDekmQebtCrQn2gAFdRIvY4/3JBVj5raxSc4I0Qku13LweR2bWfPzGmzCtHPYtdG4UuUDwVBtxYqrlh+UMBaqZaa2hLWM3YcRjI/a/yBXxFs1Bnm00ia8OLQn/5lxFH0XI2qGXG1LwcBo98yDRxdWsQ+TQUKskicZRNPFd5IEzEY8wrOFAjI90EZMqDeNjdtqTXvfHzm+uIcUErKKpz9MI6mGYotbHxC2bFjDUjkzMxfJ/S/QvgWSQHeop6D9alkFLPTfMmyVBAKM3JGgX1HBWFbyWh+acfy+rdkfXsEJRZBJ0/3OPXYk81g6jsjmXYJbhOzpC6y3FLyFOlCKOrtjcGjbDkwPBjn0ufysSr3nTtyK570YHK/+0VD8hXEEe+lnKp19mcSBQEw/TdFT3YPQmxTbBgOFqMsJdtoU=","ak.pv":"13","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script><link href="./Aadhar_updation_project_files/BUM28-7GUGJ-B7YY7-XUSPX-EJ96D" rel="preload" as="script"><script id="boomr-scr-as" src="./Aadhar_updation_project_files/BUM28-7GUGJ-B7YY7-XUSPX-EJ96D" async=""></script><style type="text/css">
+              html body p,span {
+                  -webkit-user-select: text !important;
+                  -khtml-user-select: text !important;
+                  -moz-user-select: text !important;
+                  -ms-user-select: text !important;
+                  user-select: text !important;
+              }
+
+              lighter {
+                  font-family: inherit !important;
+                  font-size: inherit !important;
+                  font-weight: inherit !important;
+                  cursor: pointer !important;
+              }
+
+              lighter {
+                background-image: initial !important;
+              }
+
+              l-core.L-underline {
+                border-bottom: 2px solid rgba(64, 158, 255, 1) !important;
+                animation: L-coreBorderAnimation 1s;
+                background: rgba(64, 158, 255, 0.2) !important;
+                cursor: pointer !important;
+              }
+
+              l-core.L-underline.L-bgHover {
+                background: rgba(64, 158, 255, 0.3) !important;
+                transition: background 0.2s !important;
+              }
+
+              @keyframes L-coreBorderAnimation {
+                0% {
+                  border-bottom-color: rgba(64, 158, 255, 0.5)
+                }
+                100% {
+                  border-bottom-color: rgba(64, 158, 255, 1)
+                }
+              }
+
+              .ab-iam-root {
+                  z-index: 99999999999999999999 !important;
+              }
+
+              .OrderDetails-items {
+                  display: none;
+              }
+
+              .OrderDetails-footer .OrderDetailsFooter-subtotal {
+                  display: none;
+              }
+
+              .OrderDetails-footer .OrderDetailsFooter-subtotalItems {
+                  display: none;
+              }
+
+              .OrderDetails-footer .OrderDetails-total {
+                  display: none;
+              }
+
+              .PSPDFKit-Popover-Text-Markup-Toolbar {
+                  display: none;
+              }
+
+              .liner-mini-button {
+                  display: none;
+                  position: absolute !important;
+                  width: auto;
+                  height: 30px !important;
+                  z-index: 999999999999 !important;
+              }
+
+              .liner-mini-button .liner-mb {
+                  display: flex;
+                  cursor: pointer !important;
+                  max-width: initial !important;
+                  width: 30px !important;
+                  height: 30px !important;
+                  position: absolute !important;
+                  left: 0 !important;
+                  top: 0 !important;
+                  opacity: 1 !important;
+                  border: none !important;
+                  -webkit-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
+                  -moz-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
+                  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) !important;
+                  background-color: #ffffff !important;
+                  border-radius: 40px !important;
+                  background-size: 20px !important;
+                  background-position: center !important;
+                  background-repeat: no-repeat !important;
+                  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMi4wNCAwLjk5OTk5OEwyLjU5IDEwLjQ1QzIuMjIgMTAuODMgMiAxMS4zMyAyIDExLjg2VjE0QzIgMTUuMTEgMi45IDE2IDQgMTZINi4xM0M2LjY2IDE2IDcuMTcgMTUuNzkgNy41NCAxNS40MUwxNi45OSA1Ljk2QzE4LjE2IDQuNzkgMTguMTcgMi44OSAxNyAxLjcyTDE2LjI4IDAuOTk5OTk4QzE1LjExIC0wLjE3MDAwMyAxMy4yMSAtMC4xNzAwMDMgMTIuMDQgMC45OTk5OThaTTcuODg0MDEgMTIuOTQ0N0w2LjQ3MjI3IDE0LjM1NjRMNi40NjUyOSAxNC4zNjM2QzYuMzg0NTUgMTQuNDQ2NSA2LjI2NTIyIDE0LjUgNi4xMyAxNC41SDRDMy43MjM1NCAxNC41IDMuNSAxNC4yNzY3IDMuNSAxNFYxMS44NkMzLjUgMTEuNzU0MyAzLjU0MzA2IDExLjYyMzggMy42NTk2NSAxMS41MDE3TDUuMDUwMzIgMTAuMTExTDcuODg0MDEgMTIuOTQ0N1pNOC45NDQ2NyAxMS44ODRMMTUuOTI5MyA0Ljg5OTM0QzE2LjUyMDEgNC4zMDg2IDE2LjUxNyAzLjM1ODM3IDE1LjkzOTMgMi43ODA2NkwxNS4yMTkzIDIuMDYwNjZDMTQuNjM1MSAxLjQ3NjQ0IDEzLjY4NDkgMS40NzY0NCAxMy4xMDA2IDIuMDYwNjZMNi4xMTA5OCA5LjA1MDMyTDguOTQ0NjcgMTEuODg0WiIgZmlsbD0iIzRCNTk2NiIvPgo8L3N2Zz4K") !important;
+
+              }
+
+              .liner-mini-button .liner-mb:not(.liner-mb-disabled)::after {
+                position: absolute !important;
+                bottom: 5px !important;
+                left: 5px !important;
+                content: '' !important;
+                background: #ffff83;
+                width: 20px !important; 
+                height: 3px !important;
+                border-radius: 2px !important;
+              }
+
+              .liner-mini-button .liner-mb.liner-mb-disabled {
+                background-size: 30px !important;
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzMCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTUiIGN5PSIxNSIgcj0iMTUiIGZpbGw9IndoaXRlIi8+CjxtYXNrIGlkPSJtYXNrMF84Ml85NTkiIHN0eWxlPSJtYXNrLXR5cGU6bHVtaW5hbmNlIiBtYXNrVW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4PSIwIiB5PSIwIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiPgo8Y2lyY2xlIGN4PSIxNSIgY3k9IjE1IiByPSIxNSIgZmlsbD0id2hpdGUiLz4KPC9tYXNrPgo8ZyBtYXNrPSJ1cmwoI21hc2swXzgyXzk1OSkiPgo8cmVjdCB4PSI1IiB5PSIyMiIgd2lkdGg9IjIwIiBoZWlnaHQ9IjMiIHJ4PSIxLjUiIGZpbGw9IiNFREYyRjciLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xNy4wNCA2TDcuNTkgMTUuNDVDNy4yMiAxNS44MyA3IDE2LjMzIDcgMTYuODZWMTlDNyAyMC4xMSA3LjkgMjEgOSAyMUgxMS4xM0MxMS42NiAyMSAxMi4xNyAyMC43OSAxMi41NCAyMC40MUwyMS45OSAxMC45NkMyMy4xNiA5Ljc5IDIzLjE3IDcuODkgMjIgNi43MkwyMS4yOCA2QzIwLjExIDQuODMgMTguMjEgNC44MyAxNy4wNCA2Wk0xMi44ODQgMTcuOTQ0N0wxMS40NzIzIDE5LjM1NjRMMTEuNDY1MyAxOS4zNjM2QzExLjM4NDUgMTkuNDQ2NSAxMS4yNjUyIDE5LjUgMTEuMTMgMTkuNUg5QzguNzIzNTQgMTkuNSA4LjUgMTkuMjc2NyA4LjUgMTlWMTYuODZDOC41IDE2Ljc1NDMgOC41NDMwNiAxNi42MjM4IDguNjU5NjUgMTYuNTAxN0wxMC4wNTAzIDE1LjExMUwxMi44ODQgMTcuOTQ0N1pNMTMuOTQ0NyAxNi44ODRMMjAuOTI5MyA5Ljg5OTM0QzIxLjUyMDEgOS4zMDg2IDIxLjUxNyA4LjM1ODM3IDIwLjkzOTMgNy43ODA2NkwyMC4yMTkzIDcuMDYwNjZDMTkuNjM1MSA2LjQ3NjQ0IDE4LjY4NDkgNi40NzY0NCAxOC4xMDA2IDcuMDYwNjZMMTEuMTExIDE0LjA1MDNMMTMuOTQ0NyAxNi44ODRaIiBmaWxsPSIjOUFBN0IzIi8+CjxjaXJjbGUgY3g9IjIyLjUiIGN5PSIyMC41IiByPSI0Ljc1IiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSIjRjM1NzUwIiBzdHJva2Utd2lkdGg9IjEuNSIvPgo8cGF0aCBkPSJNMTkuNSAyMy41TDI1LjUgMTcuNSIgc3Ryb2tlPSIjRjM1NzUwIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIvPgo8L2c+Cjwvc3ZnPgo=") !important;
+              }
+
+              .liner-page-tooltip-body-point {
+                  position: absolute !important;
+                  left: 2px !important;
+                  top: 9px !important;
+                  width: 8px !important;
+                  height: 8px !important;
+                  z-index: 2 !important;
+                  background-color: #52565d !important;
+                  border-top: 1px solid #969aa2 !important;
+                  border-left: 1px solid #969aa2 !important;
+                  border-top-left-radius: 4px !important;
+                  transform: rotate(317deg) skew(16deg, 12deg) !important;
+              }
+
+              .liner-page-text-only-tooltip {
+                  position: relative !important;
+              }
+
+              .liner-page-tooltip-body {
+                  display: table !important;
+                  margin-left: 6px !important;
+                  padding: 5px 11px !important;
+                  background-color: #52565d !important;
+                  border: 1px solid #969aa2 !important;
+                  border-radius: 8px !important;
+                  box-shadow: 0 4px 8px 0 rgba(39, 43, 49, 0.3) !important;
+                  font-family: system-ui !important;
+                  font-stretch: normal !important;
+                  font-style: normal !important;
+                  font-weight: 400 !important;
+                  line-height: 1.3em !important;
+                  letter-spacing: -.35px !important;
+                  font-size: 12px !important;
+                  color: #fff !important;
+                  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+              }
+
+              .liner-page-tooltip-body span {
+                  display: inline-block !important;
+              }
+
+              .liner-mini-tooltip {
+                  display: none;
+                  position: absolute !important;
+                  z-index: 1003 !important;
+              }
+
+              .liner-mini-tooltip.liner-enabled {
+                  width: 186px !important;
+                  height: 30px !important;
+                  padding: 6px 2px 6px 35px !important;
+                  box-sizing: border-box !important;
+                  border-radius: 30px !important;
+                  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2) !important;
+                  background-color: #fff !important;
+              }
+
+              .liner-mini-color-circle {
+                  display: flex !important;
+                  align-items: center !important;
+                  justify-content: center !important;
+                  position: relative !important;
+                  width: 18px !important;
+                  height: 18px !important;
+                  margin: 0 3px !important;
+                  float: left !important;
+                  border-radius: 50% !important;
+                  cursor: pointer !important;
+              }
+
+              .liner-mini-color-circle.liner-color-lock {
+                user-select: none !important;
+              }
+
+              .liner-color-label, .liner-youtube-color-label {
+                  display: none;
+                  position: absolute;
+                  max-width: 80px;
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  height: 17px;
+                  top: -24px;
+                  padding: 2px 3px 0px 3px;
+                  color: white;
+                  background-color: #52565D;
+                  border-radius: 2px;
+                  font-family: system-ui !important;
+                  font-weight: 400;
+                  font-size: 11px;
+                  line-height: 13px;
+              }
+
+              .liner-mini-color-circle:hover .liner-color-label {
+                display: block;
+              }
+
+              .liner-color-label.LinerHover, .liner-youtube-color-label.LinerHover {
+                display: block;
+              }
+
+              .liner-tooltip-icon:hover, .liner-youtube-tooltip-icon:hover {
+                  background-color: #f2f3f7 !important;
+                  border-radius: 30px !important;
+                  transition: background-color 0.3s !important;
+              }
+
+              .liner-tooltip-color-picker-icon-part, .liner-youtube-tooltip-color-picker-icon-part {
+                  position: absolute !important;
+                  display: inline-block !important;
+                  width: 18px !important;
+                  height: 18px !important;
+                  border-radius: 100px !important;
+              }
+
+              .liner-tooltip-menu .liner-tooltip-color, .liner-youtube-tooltip-menu .liner-youtube-tooltip-color {
+                  position: absolute !important;
+                  top: 3px !important;
+                  left: 10px !important;
+                  display: inline-block !important;
+                  width: 28px !important;
+                  height: 28px !important;
+              }
+
+              .liner-youtube-tooltip-menu .liner-youtube-tooltip-color {
+                cursor: pointer !important;
+              }
+
+              .liner-tooltip-menu.liner-desktop .liner-tooltip-color, .liner-youtube-tooltip-menu .liner-youtube-tooltip-color {
+                position: unset !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+              }
+
+              .liner-tooltip-menu .liner-tooltip-comment, .liner-youtube-tooltip-menu .liner-youtube-tooltip-comment {
+                  display: inline-block !important;
+                  position: absolute !important;
+                  top: 3px !important;
+                  left: 46px !important;
+                  width: 28px !important;
+                  height: 28px !important;
+                  cursor: pointer !important;
+                  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00LjUgNUM0LjIyMzg2IDUgNCA1LjIyMzg2IDQgNS41VjE2QzQgMTYuMjAyMiA0LjEyMTgyIDE2LjM4NDUgNC4zMDg2NiAxNi40NjE5QzQuNDk1NSAxNi41MzkzIDQuNzEwNTUgMTYuNDk2NiA0Ljg1MzU1IDE2LjM1MzZMNy4yMDcxMSAxNEgxNS41QzE1Ljc3NjEgMTQgMTYgMTMuNzc2MSAxNiAxMy41VjUuNUMxNiA1LjIyMzg2IDE1Ljc3NjEgNSAxNS41IDVINC41Wk01IDE0Ljc5MjlWNkgxNVYxM0g3QzYuODY3MzkgMTMgNi43NDAyMSAxMy4wNTI3IDYuNjQ2NDUgMTMuMTQ2NEw1IDE0Ljc5MjlaIiBmaWxsPSIjNTA1NTVDIi8+CjxwYXRoIGQ9Ik0xOS41IDhIMTdWOUgxOVYxNy43OTI5TDE3LjM1MzYgMTYuMTQ2NEMxNy4yNTk4IDE2LjA1MjcgMTcuMTMyNiAxNiAxNyAxNkg5VjE1SDhWMTYuNUM4IDE2Ljc3NjEgOC4yMjM4NiAxNyA4LjUgMTdIMTYuNzkyOUwxOS4xNDY0IDE5LjM1MzZDMTkuMjg5NCAxOS40OTY2IDE5LjUwNDUgMTkuNTM5MyAxOS42OTEzIDE5LjQ2MTlDMTkuODc4MiAxOS4zODQ1IDIwIDE5LjIwMjIgMjAgMTlWOC41QzIwIDguMjIzODYgMTkuNzc2MSA4IDE5LjUgOFoiIGZpbGw9IiM1MDU1NUMiLz4KPC9zdmc+Cg==) !important;
+                  background-size: 24px 24px !important;
+                  background-position: center !important;
+                  background-repeat: no-repeat !important;
+              }
+
+              .liner-tooltip-menu.liner-desktop .liner-tooltip-comment, .liner-youtube-tooltip-menu .liner-youtube-tooltip-comment {
+                position: unset !important;
+              }
+
+              .liner-tooltip-menu .liner-tooltip-undo, .liner-youtube-tooltip-menu .liner-youtube-tooltip-undo {
+                  display: inline-block !important;
+                  position: absolute !important;
+                  top: 3px !important;
+                  right: 9px !important;
+                  width: 28px !important;
+                  height: 28px !important;
+                  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik02IDZINVY3SDYuMDUzNTdMNi42MDc1IDE3LjMzOTdDNi42ODczOCAxOC44MyA4LjAwNTEzIDIwIDkuNjAzNzUgMjBIMTQuMzk2MkMxNS45OTQ5IDIwIDE3LjMxMjYgMTguODMgMTcuMzkyNSAxNy4zMzk3TDE3Ljk0NjQgN0gxOVY2SDE4SDE1LjM0NjVMMTUuMDYwMiA1LjIzNjE1QzE0Ljc3OTggNC40ODkzNSAxNC4wMTYxIDQgMTMuMTY4OSA0SDEwLjgzMTFDOS45ODM5NCA0IDkuMjIwMjEgNC40ODkzNSA4LjkzOTkxIDUuMjM1OTJMOC42NTM0NiA2SDZaTTkuNzIxNDIgNkgxNC4yNzg2TDE0LjEyMzkgNS41ODc0MkMxMy45OTU0IDUuMjQ1MDcgMTMuNjEyOSA1IDEzLjE2ODkgNUgxMC44MzExQzEwLjM4NzEgNSAxMC4wMDQ2IDUuMjQ1MDcgOS44NzYxOCA1LjU4NzE4TDkuNzIxNDIgNlpNMTYuOTQ1IDdINy4wNTUwMUw3LjYwNjA3IDE3LjI4NjFDNy42NTY3IDE4LjIzMDkgOC41MjI4OCAxOSA5LjYwMzc1IDE5SDE0LjM5NjJDMTUuNDc3MSAxOSAxNi4zNDMzIDE4LjIzMDkgMTYuMzkzOSAxNy4yODYyTDE2Ljk0NSA3Wk0xMCA5VjE2SDExVjlIMTBaTTEzIDE2VjlIMTRWMTZIMTNaIiBmaWxsPSIjNTA1NTVDIi8+Cjwvc3ZnPgo=) !important;
+                  background-size: 24px 24px !important;
+                  background-position: center !important;
+                  background-repeat: no-repeat !important;
+              }
+
+              .liner-tooltip-menu.liner-desktop .liner-tooltip-comment, .liner-youtube-tooltip-menu .liner-youtube-tooltip-comment {
+                position: unset !important;
+              }
+
+              .liner-tooltip-menu.liner-desktop .liner-tooltip-undo, .liner-youtube-tooltip-menu .liner-youtube-tooltip-undo {
+                position: unset !important;
+              }
+
+              .liner-tooltip-wrap .liner-color-picker, .liner-youtube-tooltip-wrap .liner-youtube-color-picker {
+                  display: none;
+                  width: 207px !important;
+                  height: 30px !important;
+                  margin-left: -43px !important;
+                  box-sizing: border-box !important;
+                  padding: 6px 0px !important;
+                  border-radius: 15px !important;
+                  -webkit-backdrop-filter: blur(10.5px) !important;
+                  backdrop-filter: blur(10.5px) !important;
+                  -webkit-box-shadow: 0 2px 4px 0 rgba(39, 43, 49, 0.2) !important;
+                  -moz-box-shadow: 0 2px 4px 0 rgba(39, 43, 49, 0.2) !important;
+                  box-shadow: 0 2px 4px 0 rgba(39, 43, 49, 0.2) !important;
+                  background-color: #fff !important;
+              }
+
+              .liner-color-picker .liner-color-circle, .liner-youtube-color-picker .liner-youtube-color-circle {
+                  float: left !important;
+                  width: 18px !important;
+                  height: 18px !important;
+                  margin: 0 5px !important;
+                  border-radius: 50% !important;
+              }
+
+              .liner-color-lock, .liner-youtube-color-lock {
+                  background-size: 6px 8px !important;
+                  background-position: center !important;
+                  background-repeat: no-repeat !important;
+                  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAeCAYAAAA2Lt7lAAAAAXNSR0IArs4c6QAAAkpJREFUSA3tVj1oFEEUft/sXm6FIJgItgFjbMQiloIihqDYJAgHSrSLWJ0KEe9Wz4yR7F4lBEsrxVpBEFEIIikigo2VPym08Qd/GpFL8Paeby7Zu93lNneRNAeZ5v1973s7b5aZB1pnaf3cXqFXYxQEJwkYJuIBZvwF8VcmLBLo0fC+3Q9yuVyQRoO0QEH7o6jRbWYeSsMYP4AlkDrvzVyZb4WzWjnd6/4lYr7HTDtbxRO+PgJPHDo88nvhxfzLRIxU0uHq8uka8y0hX4uhogBfwRpxrMyu/u2ZXtvCUSjy5Pv/mHyDNTkmN8kXa1HR8/q5gg+SssMAZfuLqidzavba1KdkorG19gdWanxfChw0NkC/yKEh33V/Gtus2A54GedCckF/RnbbeBq5Sda6+JGc3nH5yi/GlkJ9VFGTRg9XrID8HWONgMJl7+rFb6GdJn03/51glRpxNDmML1ZA7MEQ2EP2s1BvK1Ww0MTwnqaeKFDf4lpU66kfUeB6uq/d92E8ymF8yR2EuE2T3V8AhZLHm9aPFkTd3yI7uqvyTTd2dURjG9Gjbe/+Fm3toO3Zb7WofYvkHV0OUeZNDvX/lVEOw61kkHrXIEu8pw3/RpQ4x1sUS15ertO5VQ4EUJgj2HeydGBJ6yPVTrhXJ8DXg8TVSa7xBXn+6/OWgspDJjcUp8uPZSQ43glZxxjgiX+jcEJmKjAcPiNjysOOk9sBhctR2Yk6dxQr8+gxmUfPysO9X+ruFRm7baPYqC6HWTVnKfINCHe9mcLTMP4PC7C4CQYvfhkAAAAASUVORK5CYII=) !important;
+              }
+
+              .liner-color-picker .liner-color-circle.liner-color-yellow, .liner-youtube-color-picker .liner-youtube-color-circle.liner-youtube-color-yellow {
+                  margin-left: 11px !important;
+              }
+
+              .liner-color-setting, .liner-youtube-color-setting {
+                  background-repeat: no-repeat !important;
+                  background-size: contain !important;
+                  background-position: center !important;
+                  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAQMSURBVHgB7ZlrTttAEMdn/SD08QFO0OQ7ASyRVCRFSm6QnqBwAuAEhBMUTkA4AfQEiYoAiVQKJfQzuQF8aVWwvdsZC9oQP3bXmIfU/KQokT37mB3v7H8cgDFj/m8YZET7uJfPWdYe/pxPNGRscO269fqiM4AMMCAjJm17A2STJ4TIT9rmBmREZg4IIeST/2vLlG1lZOcAQF7DXMc2kUwcaPd6U7iZpjSaTFEbyAAlB2iwg26vFnd/wtVf0Ylf8W0OT87nKSmAAtIsdPTtrIHP7E6wwphBBOebN77fucsi5FzOo03J1kALtnXtudvD/Ux61ioHWLuLpg9efankdBJ7AZkDJ+cXwEQ+1JCxFu7GwfCA2uCCcOFvW2C+80Esh/rB+5WFmUJiF5A4+f4qWmzBM0IRr76fa8bdj3UgOJhMux21+k/M1bXlFeqOcxV1M3YTBwfT80+ewD1mxx58kRG4lQUX8IKI29CREZi0rB14YVhgRUYh5MBXSpsANUgJtr3Cz6YQnlMpFRl96DdKjRXKWpASmlPUWWSNXjA8fO7N1CJ1/7XlrTgjG65adk7xiz6tw26/ib2nEnOmb5CG6gxfC0XAzfFWypXax9X+6MRkizuqpWJTMNgGXZgYMMH3Ry+HHKB0xXy/ThMCnc49b13VvLpQXNNcpP1Xpu8sRtQQkZuYDGk16VkGBRgYnUXNAoVzoRgFtp4U2UQxR+H2MSggwRPuLmgSPKoSaOxKaSZRCUjV6FKp2JHZvDFz2mcGPaqUseCBY2dW0DwXUgcOuv2azOanf10ATei0l6lYqgtAQqIDpEZNHAtknXCjBppMmGZNZsOY6B13+4lnRrQWCoqUQE40QI1ExRhFXJ0RBdUev113s66SRgMh59o9UJ88QdXUnqrxcfeHltJFGbKcs+12VB0dcsBmRiONjCatctTt7yXVsjSBo+7ZZwG8CdoDiPyEa4YWNaSFhGmcQnoauFLz+Ny2uGBfquWZoK9jdMq3jIbhmqsPqTF8I5x2I/cATqD9EEX6SARaa/RiZBbyFCXEUxKntSIdoBMwlWJ8JCgLxWmt2HPgxvSasqP+SUClC5hC427HOhDkdP78URAcNpOUrsKLrTM8cFj+XqcYGSZglzM+MARbHb2vPDmKsBDrjBIGY59CBrj6lYXZRJki1UI+YyvDA1KNgGVjoVIurn0ozW1R8ZNmv1Ab6qdanm1VyrPLuEkLw3UzjeWLf2PHoVT8Uh7nJkzd1rYhDk9684xZPdBA3HhOtRrdHwnIt5Z36ihIk0z+YrrVTpc6bVA7Tetopzgy+48M3zZcarzkvcJDaRoyILOCBic/0LB9iFy5R3YVmeDflW3xtTlkRHYR8FFhqr0q6SQdTGPGjNHjD6xutmM8IxWUAAAAAElFTkSuQmCC) !important;
+              }
+
+              .liner-color-yellow {
+                background-color: #FFFF83;
+              }
+
+              .liner-color-green {
+                background-color: #A6FFE9;
+              }
+
+              .liner-color-orange {
+                background-color: #FFC7BA;
+              }
+
+              .liner-color-violet {
+                background-color: #D9C3FF;
+              }
+
+              .liner-color-blue {
+                background-color: #B8EEFF;
+              }
+
+              .liner-color-pink {
+                background-color: #FFD0EF;
+              }
+
+              .liner-upload-pdf-btn {
+                  position: fixed;
+                  right: 17px;
+                  top: 61px;
+                  width: 40px;
+                  height: 40px;
+                  background-image: url(data:image/png;base64,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);
+                  background-size: contain;
+                  border-radius: 20px;
+                  cursor: pointer;
+                  -webkit-box-shadow: 0 2px 8px 0 rgba(39, 43, 49, 0.3);
+                  -moz-box-shadow: 0 2px 8px 0 rgba(39, 43, 49, 0.3);
+                  box-shadow: 0 2px 8px 0 rgba(39, 43, 49, 0.3);
+                  transition: all 0.2s !important;
+                  z-index: 999999999 !important;
+              }
+
+              .liner-upload-pdf-btn.disabled {
+                  opacity: 0.5;
+                  cursor: auto;
+                  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+                  -moz-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+                  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+                  cursor: progress;
+              }
+
+              .liner-upload-pdf-tooltip {
+                  position: fixed;
+                  display: none;
+                  font-family: system-ui !important;
+                  right: 10px;
+                  top: 105px;
+                  padding: 4px;
+                  border-radius: 3px;
+                  background-color: #323639;
+                  font-size: 10px;
+                  font-weight: normal;
+                  font-stretch: normal;
+                  font-style: normal;
+                  line-height: normal;
+                  letter-spacing: normal;
+                  text-align: center;
+                  color: #fff;
+                  z-index: 999999999 !important;
+              }
+
+              .liner-upload-pdf-banner {
+                  display: none;
+                  font-family: system-ui !important;
+                  position: fixed;
+                  top: 117px;
+                  right: 16px;
+                  background-color: #00bdb8;
+                  color: #fff;
+                  -webkit-box-shadow: 0 2px 8px 0 rgba(39, 43, 49, 0.3);
+                  -moz-box-shadow: 0 2px 8px 0 rgba(39, 43, 49, 0.3);
+                  box-shadow: 0 2px 8px 0 rgba(39, 43, 49, 0.3);
+                  padding: 14px 12px;
+                  font-size: 16px;
+                  font-weight: bold;
+                  font-stretch: normal;
+                  font-style: normal;
+                  line-height: normal;
+                  letter-spacing: -0.4px;
+                  border-radius: 16px 4px 16px 16px;
+                  z-index: 999999999 !important;
+              }
+
+              .liner-upload-pdf-progress-bar {
+                  background-color: #00bdb8 !important;
+                  position: fixed;
+                  top: 0;
+                  left: 0;
+                  width: 0%;
+                  height: 4px;
+                  z-index: 999999999 !important;
+              }
+
+              .liner-picked-search-result-bar {
+                  position: absolute !important;
+                  left: -20px !important;
+                  background-color: #82CFFA;
+                  width: 4px;
+              }
+
+              .L-AIAnswer {
+                background-color: #05A0F5 !important;  
+              }
+
+              .L-AIAnswerWrapper {
+                position: relative;
+              }
+
+              .L-AIAnswer--text { 
+                font-family: system-ui !important;
+                position: absolute;
+                left: 0;
+                top: -4px;
+                display: block;
+                word-break: keep-all;
+                padding: 4px 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #05A0F5;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 11px;
+                line-height: 13px;
+                color: #fff;
+                border-radius: 5px;
+                white-space: nowrap;
+              }
+
+              .liner-picked-search-result-bar.liner-my-highlight {
+                  background-color: #fff881 !important;
+              }
+
+              .liner-picked-search-result-link {
+                  display: none !important;
+                  /* display: inline-block !important; */
+                  color: #00bdb8 !important;
+                  margin-top: 4px !important;
+                  text-decoration: none !important;
+              }
+
+              .liner-picked-search-result-link.liner-picked-search-result-link-scholar {
+                  margin-top: 8px !important;
+              }
+
+              .liner-picked-search-result-link:hover {
+                  color: #00a7a0 !important;
+              }
+
+              .liner-picked-search-result-link .liner-picked-search-result-arrow {
+                  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAYCAYAAAAlBadpAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAD6ADAAQAAAABAAAAGAAAAADV9pCbAAAAt0lEQVQ4Ec2UzQ3CMAxGHdQ1OgwXBqm6Bx0E2KNIwDAM4uZrRKLI+bE5IHxp6vq9xI0Sov+Ix7rQc70Ss9MsaIhFAInPxD7zuvshz+Qc3qpxiF8cjXHMPHnBpbeCBB9PmOlmEeS9odcw4xQlEAaxaCGHQRgEEjYIyrBSUIcVgjbcEaStQqEx2jN3/nwd7oBYZBlWgGVYCUrYAOawEUzwFyDgsM849ExvJPZonKRPiXwaryEp+FVmA0eInXoUq2t+AAAAAElFTkSuQmCC) !important;
+                  width: 5px !important;
+                  height: 8px !important;
+                  display: inline-block !important;
+                  background-size: contain !important;
+                  vertical-align: text-top !important;
+                  margin-left: 4px !important;
+                  margin-top: 4px !important;
+              }
+
+              .liner-picked-search-result-description {
+                  display: none;
+                  z-index: 9999999999999999999 !important;
+                  width: 260px !important;
+                  padding: 16px 20px !important;
+                  position: absolute !important;
+                  left: initial !important;
+                  border-radius: 8px !important;
+                  box-shadow: 0 10px 20px 0 rgba(39, 43, 49, 0.15) !important;
+                  border: solid 1px #eef1f4;
+                  background-color: #ffffff;
+              }
+
+              .liner-picked-search-result-description .liner-picked-search-result-description-title {
+                  font-family: system-ui !important;
+                  font-size: 14px !important;
+                  font-weight: bold !important;
+                  font-stretch: normal !important;
+                  font-style: normal !important;
+                  line-height: normal !important;
+                  color: #969aa2;
+                  margin: 0 !important;
+                  margin-bottom: 8px !important;
+              }
+
+              .liner-picked-search-result-description .liner-picked-search-result-description-content {
+                  font-family: system-ui !important;
+                  font-size: 14px !important;
+                  font-weight: normal !important;
+                  font-stretch: normal !important;
+                  font-style: normal !important;
+                  line-height: 1.43 !important;
+                  color: #52565d;
+                  margin: 0 !important;
+              }
+
+              .liner-picked-search-result-information {
+                  display: inline-block !important;
+                  margin-top: 4px !important;
+                  font-size: 12px !important;
+                  font-weight: 400 !important;
+                  font-stretch: normal !important;
+                  font-style: normal !important;
+                  line-height: normal !important;
+                  color: #7c828f !important;
+                  cursor: pointer !important;
+              }
+
+              .liner-picked-search-result-information.liner-my-highlight {
+                  cursor: initial !important;
+              }
+
+              .liner-picked-search-result-information.liner-picked-search-result-information-scholar {
+                  margin-top: 6px !important;
+                  position: relative !important;
+              }
+
+              .liner-picked-search-result-information .liner-picked-search-result-information-icon {
+                  position: relative !important;
+                  top: 3px !important;
+                  display: inline-block !important;
+                  margin-right: 2px !important;
+                  width: 14px !important;
+                  height: 14px !important;
+                  background-size: 14px 14px !important;
+                  background-repeat: no-repeat !important;
+                  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADFw8lbAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAKqADAAQAAAABAAAAKgAAAADUGqULAAAFMklEQVRYCdWZT4hbRRzHfzNJmhxEdqEKDbKioLCCevLSrYdF60VZ0UMU2S24GrcetIJgvajVnhQ8LB7sGl2hu4jmYOniH7DKHmx78aSCBQWlq0TwDw22YLKb98bfd978Xt57m6xJttnXPkjm//w+mZk385tvFG3jWXh/+Xa/RVNE/m1EqmjIFMmoou1SmZoiVSMy/NE/6CytzD0+/f2g5lS/DQFnWv6sT+pBMuamvtor9Ysmc1Jl9WK/0D2DLhyvjnnN5lGGm2Y43Rfg5sr8O9VyJp9/ae5AaW1z8eac/wWtVqu7/vqn+Rr55jluno93oS6Qok+Z+pQhWsuYXG1kRNcuXswrz/t3j6c2imxgzCfaT4bu52UwGm2vFDWMUvO7r82/XCqV1qNlyfiWoIuL1esarcbH3GhftKFS6oTW+q1bby5+PTk52YqWdYuvrq5mf/y5drfv+88YYx5K1DtdyBYenp0t/ZnID5NdQSuVD+7YIG+Fp/pGqc2AZzIZeuGp2ZmzkjdI+M7i0l7PozcYeCJsr9T5HGWmyuXHvgvzIpGOoBbSeGd4qq5BXQb0eJqeP/jkzHyk7bajx95dOmQMvcnAmaAzdSmnMhOdYDeB2un2mt+EI6morkmVDpZnTm2brEMHC+8t3+f5/ke8hkdsMY9sIZO/K7kMYm8vXhy7JmW6GTJHu/YOCxJgc09MfwEb/FLWLSjbBgNYbNp9ZaOJv+vrRzltXxw73USlcvnRc9E63eKyOyifDqCO0XS8l7cZdWGDR/YR3zefuWWwz+40RC+iHE84otgnSfnPBtlYl7wm+5hut4Ud5tNpDz68nR12xqTLLUOMLGxKJWXMIcvkMkJQbOa8sAvIx9vd74sjIymGbD9udKN5W8VhE7ZRByz2gHENLCiORXfi2GxsQa58x4OYbT4FLRtTWFCc3RLnX3RikH0SazL5qzrlJesk07ANBpevHVsAah0MKeETJ9m4lzReHNLqdfaYfscHcZvXS+NEHZx6kiVsKtjcW98GBerC+C03XN/rsSidXe4Qx+25n377Q3yDnMreqTdMi/3J4FFkPkkbEiRgAIvDIjBq3hLGJYN0ZiinT9h/HxFep19KdTDyhg+PnJ00PMb/NYgM9v12ZekV3rCPoDUbOvJ0eebVwXqyRGvttqqo7fXB5cCfbBemG4uygJFvBu6Ow1xwetPFa1uPsTCj3UelGJ65xNMOkyzsweGWGDy4Pkg87TDGwow6uNI6UL7jpA0o9nHfkjgYeerbI8rzPiaFaYdxFh5R9lJCf5O3lnvTBhT79uYqCQgYmZw+KWlD6gEcX5JOK7QM9nodEEBl0VaxYAUjyDKjuNKmBSh2AwanATAbGO32BJlFKuHeLfG0wiiDsFlQaEEMxcuCXy0WB3DvTgsStsHg7PuOLfBH3fQvCxzEAYnvdBizzfqUiGnhyQTBiqGaAONfNAFxYKchA0EiUE/YY2o4JosRgkJVU6TnBQ4KxrHK0n5JDzuELdgUOxDPokpf7Gy3d/N64yuuHIhiToDo9W4vRvoNK5UPxzdo/WyolhCd3j1SuCeq8IUjis5RAFWNncnz1hjLLOhgmCOLvmOQkHSYIQoJlhgoMqD5QFVj1/cS0viV7FZ/Pow1a9ck990eSRbJ2HZSdwJGbOqRIc9VITsK7FUh5AqsiF/dpHF7W8SlkO9bIo2jbb3uF0Uah7MDP4LX0aj0ixBb0GWRxqOdXvF/NkRhEb/i/75JAiPtVJapQBvo/ocYfF5WO1Y6Sd6d+u2U9x+vMIlu8mXhagAAAABJRU5ErkJggg==) !important;
+              }
+
+              .liner-pdf-highlight-badge {
+                  display: inline-block !important;
+                  cursor: pointer !important;
+                  background-color: #ffffff !important;
+                  border: 1px solid #ebebeb !important;
+                  border-radius: 2px !important;
+                  padding: 0 11px 0 20px !important;
+                  height: 14px !important;
+                  line-height: 16px !important;
+                  text-align: center !important;
+                  font-weight: normal !important;
+                  color: #4d5156 !important;
+                  font-size: 10px !important;
+                  letter-spacing: 0.75px !important;
+                  position: relative !important;
+                  top: -1px !important;
+                  margin-left: 5px !important;
+                  text-decoration: none !important;
+              }
+
+              .liner-pdf-highlight-badge.liner-pdf-highlight-badge-scholoar {
+                  position: absolute !important;
+                  top: 3px !important;
+              }
+
+              .liner-pdf-highlight-badge .liner-pdf-highlight-badge-icon {
+                  display: inline-block !important;
+                  background-image: url(data:image/png;base64,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) !important;
+                  background-repeat: no-repeat !important;
+                  background-size: contain !important;
+                  width: 14px !important;
+                  height: 14px !important;
+                  position: absolute !important;
+                  left: 0 !important;
+              }
+
+              .liner-pdf-highlight-badge .liner-pdf-highlight-badge-arrow {
+                  display: inline-block !important;
+                  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAVCAYAAACZm7S3AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAD6ADAAQAAAABAAAAFQAAAAAtZlQqAAAA8klEQVQ4EWNgGBTALyiiwS8ofM7///8ZiXEQC0wRSOP////qQXz/4AgGoAGpjIyM/2Hy2GgmuOD/f7IwNlBjsj8RLoBr3rhuZQrQrfPgBjAwJBEyAMVvIL+CNQA1wgwBGQg2GIsXUDSDNJBiAIZmUgzAqplYA+ABBtKADEDRxM4SksbIyHAHJg6MtyT/kKg4GB+nZpDff/5ZM+v/fwYVmGJw4K1ZtgiJD2MiaGIDDcPPxGoEWYWimRSNKJpJ1QjXTI5GkGZwaINzDyPTY5AACIBDFZTWsSRJiAoIyQzj3Lx+5YCGli4wWv/fw5WWYWoHngYAORedhCuO5fQAAAAASUVORK5CYII=) !important;
+                  background-repeat: no-repeat !important;
+                  background-size: 5px 7px !important;
+                  background-position: center;
+                  width: 11px !important;
+                  height: 14px !important;
+                  position: absolute !important;
+                  right: 0 !important;
+              }
+
+              #snippet-pdf-button, #snippet_popover_container, #snippet_screenshot_edit, #snippet_screenshot, #snippet_sidebar_container, .snippet-img-button,
+              #diigo-video-capture, #diigo-video-capture-wrapper, #diigolet-notice, #diigolet-dlg-sticky, #diigolet-csm, #diigo-chrome-installed, #diigo-pdf, #diigolet-chrome-css {
+                  display: none !important;
+              }
+
+              .tF2Cxc, .exp-outline {
+                  height: inherit !important;
+              }
+
+              .guider-button-prompt__button .artdeco-button__text {
+                  height: 16px !important;
+              }
+
+              .lytb-highlighter-in-control-tooltip {
+                  display: none;
+                  position: absolute !important;
+                  bottom: 58px;
+                  z-index: 1000 !important;
+              }
+
+              .lytb-highlighter-in-control-tooltip span {
+                  background-color: rgba(28,28,28,0.9) !important;
+                  border-radius: 2px !important;
+                  padding: 5px 9px !important;
+                  color: #eee !important;
+                  font-weight: 500 !important;
+                  line-height: 15px !important;
+              }
+              
+              .lytb-summary-in-control-tooltip {
+                  display: none;
+                  position: absolute !important;
+                  bottom: 51px;
+                  z-index: 1000 !important;
+              }
+
+              .lytb-summary-in-control-tooltip span {
+                  background-color: rgba(28,28,28,0.9) !important;
+                  border-radius: 2px !important;
+                  padding: 5px 9px !important;
+                  color: #eee !important;
+                  font-weight: 500 !important;
+                  line-height: 15px !important;
+              }
+
+              ytd-thumbnail {
+                  transition: background-color 0.3s !important;
+              }
+
+              .text-wrapper.style-scope.ytd-video-renderer {
+                  transition: background-color 0.3s !important;
+              }
+
+
+              .ytd-video-renderer .picked-by-liner-users {
+                  background-color: transparent !important;
+              }
+
+              .liner-rel {
+                position: relative;
+              }
+          </style><style data-styled="active" data-styled-version="5.3.11"></style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="r/livesql/590/files/static/v430//oracle-sql/main.js" src="./Aadhar_updation_project_files/main.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ojtranslations/nls/localeElements" src="./Aadhar_updation_project_files/localeElements.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="r/livesql/590/files/static/v430//oracle-sql/AsyncParser.js" src="./Aadhar_updation_project_files/AsyncParser.js.download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ojtranslations/nls/en/localeElements" src="./Aadhar_updation_project_files/localeElements.js(1).download"></script></head><div class="L-MembershipModalContainer"></div>
+<body class="t-PageBody t-PageBody--hideLeft t-PageBody--hideActions t-PageTemplate--standard worksheet-font-size-medium t-DeferredRendering t-PageBody--noContentPadding apex-side-nav apex-icons-fontapex apex-theme-vita js-navExpanded js-navCollapsed--hidden t-PageBody--leftNav a-pwaInstall--available" id="t_PageBody" data-liner-extension-version="7.12.5" data-new-gr-c-s-check-loaded="14.1121.0" data-gr-ext-installed="" style="" data-new-gr-c-s-loaded="14.1121.0">
+<a href="https://livesql.oracle.com/apex/f?p=590:1:110986652131053:::::#main" id="t_Body_skipToContent">Skip to Main Content</a>
+<form action="https://livesql.oracle.com/apex/wwv_flow.accept?p_context=590:1:110986652131053" method="post" name="wwv_flow" id="wwvFlowForm" data-oj-binding-provider="none" novalidate="">
+<input type="hidden" name="p_flow_id" value="590" id="pFlowId"><input type="hidden" name="p_flow_step_id" value="1" id="pFlowStepId"><input type="hidden" name="p_instance" value="110986652131053" id="pInstance"><input type="hidden" name="p_page_submission_id" value="75469081735612412007672076904079750768" id="pPageSubmissionId"><input type="hidden" name="p_request" value="" id="pRequest"><input type="hidden" name="p_reload_on_submit" value="A" id="pReloadOnSubmit"><input type="hidden" value="590:1:110986652131053" id="pContext"><input type="hidden" value="75469081735612412007672076904079750768" id="pSalt">
+<header class="t-Header" id="t_Header" role="banner">
+  
+  <div class="t-Header-branding">
+    <div class="t-Header-controls">
+      <button class="t-Button t-Button--icon t-Button--header t-Button--headerTree is-active" aria-label="Main Navigation" title="Main Navigation" id="t_Button_navControl" type="button" aria-controls="t_TreeNav" aria-expanded="true"><span class="t-Header-controlsIcon" aria-hidden="true"></span></button>
+    </div>
+    <div class="t-Header-logo">
+      <a href="https://livesql.oracle.com/apex/f?p=590:1000:110986652131053:::::" class="t-Header-logo-link"><img src="./Aadhar_updation_project_files/oracle-logo.svg" alt="" class="apex-logo-img"><span class="apex-logo-text"><span class="u-vh">Oracle</span> Live SQL</span></a>
+      
+    </div>
+    <div class="t-Header-navBar">
+      <div class="t-Header-navBar--start"></div>
+      <div class="t-Header-navBar--center"><ul class="t-NavigationBar " id="3263937843120997057"><li class="t-NavigationBar-item ">
+  <a class="t-Button t-Button--icon t-Button--header t-Button--navBar" href="javascript:apex.theme42.dialog(&#39;f?p=590:44:110986652131053::::P44_PAGE_ID:1\u0026cs=3mDY4wxj4pNqIxeXj0icwVsG3cQy-HFjq-VGWS2LAQYcs45kRCPCRD2h3FmESp7wLbspm1vwThQoVYYOofGVNMA\u0026p_dialog_cs=vg5CNgDc9L9Ul58fGuFRiD5yNXk9Hx1t7w2ZtuiDBBXJXbQGssyKXdzhRFn_afYzdILBk9Qm4K9i-JVWWFrrhg&#39;,{title:&#39;Submit Feedback&#39;,h:&#39;auto&#39;,w:&#39;720&#39;,mxw:&#39;960&#39;,modal:true,dialog:null,dlgCls:&#39;t-Dialog-page--standard &#39;+&#39;&#39;},&#39;&#39;,apex.gPageContext$)" title="" target="">
+    <span class="t-Icon fa fa-comment-o" aria-hidden="true"></span><span class="t-Button-label">Feedback</span><span class="t-Button-badge"></span>
+  </a>
+</li><li class="t-NavigationBar-item ">
+  <a class="t-Button t-Button--icon t-Button--header t-Button--navBar" href="https://livesql.oracle.com/apex/f?p=590:HELP:110986652131053:::::" title="" target="">
+    <span class="t-Icon a-Icon icon-help" aria-hidden="true"></span><span class="t-Button-label">Help</span><span class="t-Button-badge"></span>
+  </a>
+</li><li class="t-NavigationBar-item has-username">
+  <button class="t-Button t-Button--icon t-Button t-Button--header t-Button--navBar js-menuButton" type="button" id="L7178662666532670" data-menu="menu_L7178662666532670" title="" aria-haspopup="menu">
+      <span class="t-Icon a-Icon icon-user" aria-hidden="true"></span><span class="t-Button-label">ORGANIZERST@GMAIL.COM</span><span class="t-Button-badge"></span><span class="a-Icon icon-down-arrow" aria-hidden="true"></span>
+  </button></li></ul></div>
+      <div class="t-Header-navBar--end"><div class="t-Form-fieldContainer t-Form-fieldContainer--hiddenLabel rel-col ls-darkmode-switch apex-item-wrapper apex-item-wrapper--yes-no " id="P0_DARKMODE_CONTAINER"><div class="t-Form-labelContainer t-Form-labelContainer--hiddenLabel col col-null">
+<label for="P0_DARKMODE" id="P0_DARKMODE_LABEL" class="t-Form-label u-VisuallyHidden">Dark Mode</label>
+</div><div class="t-Form-inputContainer col col-null"><div class="t-Form-itemWrapper"><span class="a-Switch"><input type="checkbox" id="P0_DARKMODE" name="P0_DARKMODE" value="Y" data-on-label="On" data-off-value="N" data-off-label="Off"><span class="a-Switch-toggle"></span></span></div><span id="P0_DARKMODE_error_placeholder" class="a-Form-error" data-template-id="3114753988868898_ET"></span></div></div></div>
+    </div>
+  </div>
+  <div class="t-Header-nav"></div>
+</header>
+<div class="t-Body">
+  <div class="t-Body-nav" id="t_Body_nav" role="navigation" aria-label="Main Navigation">
+  <div class="a-TreeView t-TreeNav js-defaultCollapsed js-defaultCollapsed t-TreeNav--classic" id="t_TreeNav" data-id="1_tree" aria-label="Main Navigation" role="tree" aria-hidden="false" style="visibility: inherit;"><ul role="group"><li id="t_TreeNav_0" role="none" class="a-TreeView-node a-TreeView-node--leaf a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><div role="none" class="a-TreeView-content"><span class="fa fa fa-home"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:1000:110986652131053:::::" aria-level="1" aria-selected="false">Home</a></div></li><li id="t_TreeNav_1" role="none" class="a-TreeView-node a-TreeView-node--leaf a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row is-selected is-current--top"></div><div role="none" class="a-TreeView-content is-selected is-current--top"><span class="fa fa fa-terminal"></span><a tabindex="0" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:1:110986652131053:::::" aria-level="1" aria-selected="true">SQL Worksheet</a></div></li><li id="t_TreeNav_2" role="none" class="a-TreeView-node is-expandable a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><span class="a-TreeView-toggle"></span><div role="none" class="a-TreeView-content"><span class="fa fa fa-bars"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:6:110986652131053:::::" aria-level="1" aria-selected="false" aria-expanded="false">My Session</a></div></li><li id="t_TreeNav_3" role="none" class="a-TreeView-node a-TreeView-node--leaf a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><div role="none" class="a-TreeView-content"><span class="fa fa fa-database"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:71:110986652131053:::::" aria-level="1" aria-selected="false">Schema</a></div></li><li id="t_TreeNav_4" role="none" class="a-TreeView-node is-expandable a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><span class="a-TreeView-toggle"></span><div role="none" class="a-TreeView-content"><span class="fa fa fa-magic"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:800:110986652131053:::::" aria-level="1" aria-selected="false" aria-expanded="false">Quick SQL</a></div></li><li id="t_TreeNav_5" role="none" class="a-TreeView-node a-TreeView-node--leaf a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><div role="none" class="a-TreeView-content"><span class="fa fa fa-file-text-o"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:17:110986652131053:::::" aria-level="1" aria-selected="false">My Scripts</a></div></li><li id="t_TreeNav_6" role="none" class="a-TreeView-node a-TreeView-node--leaf a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><div role="none" class="a-TreeView-content"><span class="fa fa fa-graduation-cap"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:12:110986652131053:::::" aria-level="1" aria-selected="false">My Tutorials</a></div></li><li id="t_TreeNav_7" role="none" class="a-TreeView-node a-TreeView-node--leaf a-TreeView-node--topLevel"><div role="none" class="a-TreeView-row"></div><div role="none" class="a-TreeView-content"><span class="fa fa fa-cubes"></span><a tabindex="-1" role="treeitem" class="a-TreeView-label" href="https://livesql.oracle.com/apex/f?p=590:49:110986652131053:::::" aria-level="1" aria-selected="false">Code Library</a></div></li></ul></div>
+</div>
+<script>(sessionStorage.getItem("nav.590.preferenceForExpanded") === "true" && window.matchMedia("(min-width: " + getComputedStyle(document.documentElement).getPropertyValue("--js-mq-lg") + ")").matches) && document.getElementById('t_PageBody').classList.add('js-navExpanded');</script>
+<script>
+    const labels = document.querySelectorAll(".a-TreeView .a-TreeView-label");
+    for (const label of labels) {
+        label.textContent = label.textContent.replaceAll(/\[(.*?)\]/ig, '');
+    }
+</script>
+  <div class="t-Body-main">
+    <div class="t-Body-title" id="t_Body_title"><nav aria-label="SQL Worksheet" id="R38137955754470605" class="t-BreadcrumbRegion t-BreadcrumbRegion--showBreadcrumb t-BreadcrumbRegion--compactTitle t-BreadcrumbRegion--useRegionTitle">
+  <div class="t-BreadcrumbRegion-top">
+    <div class="t-BreadcrumbRegion-body">
+      <div class="t-BreadcrumbRegion-breadcrumb"><div id="actions" class=""></div></div>
+        <div class="t-BreadcrumbRegion-title">
+        <h1 id="R38137955754470605_heading" class="t-BreadcrumbRegion-titleText" data-apex-heading="">SQL Worksheet</h1>
+      </div>
+    </div>
+    <div class="t-BreadcrumbRegion-buttons"><button class="t-Button t-Button--icon t-Button--noUI t-Button--iconLeft" onclick="void(0);" type="button" id="B17277945223825675"><span class="t-Icon t-Icon--left fa fa-eraser" aria-hidden="true"></span><span class="t-Button-label">Clear</span><span class="t-Icon t-Icon--right fa fa-eraser" aria-hidden="true"></span></button><button class="t-Button t-Button--icon t-Button--noUI t-Button--iconLeft" onclick="javascript:apex.theme42.dialog(&#39;f?p=590:13:110986652131053:::RP:P13_TABLE_NAME\u0026p_dialog_cs=k6XCrYP8-espJ72SIxFYO1kgdVgHGm9KvFxo_NgId39wW8xstMANfjs69-Na3R8jhelW82SY5WELxkZ0v1WBng&#39;,{title:&#39;Table\u002FView Finder&#39;,h:&#39;auto&#39;,w:&#39;720&#39;,mxw:&#39;960&#39;,modal:true,dialog:null,dlgCls:&#39;t-Dialog-page--standard &#39;+&#39;&#39;},&#39;&#39;,apex.jQuery(&#39;#B17278342491825676&#39;))" type="button" id="B17278342491825676"><span class="t-Icon t-Icon--left fa fa-flashlight" aria-hidden="true"></span><span class="t-Button-label">Find</span><span class="t-Icon t-Icon--right fa fa-flashlight" aria-hidden="true"></span></button><button class="t-Button t-Button--icon js-menuButton  t-Button--iconRight t-Button--gapRight" data-menu="actions_menu" onclick="void(0);" type="button" id="B17278775002825676" aria-haspopup="menu"><span class="t-Icon t-Icon--left fa fa-angle-down" aria-hidden="true"></span><span class="t-Button-label">Actions</span><span class="t-Icon t-Icon--right fa fa-angle-down" aria-hidden="true"></span></button><button class="t-Button t-Button--icon t-Button--iconLeft t-Button--padRight" onclick="javascript:apex.theme42.dialog(&#39;f?p=590:28:110986652131053:::RP,28::\u0026cs=3lDttn2z8DDOra--KeQObxX6WNZ_5SfE5gHBN9UpvHuPOBumbK3ZJK0AOoTAcHk-z8ZXVHkBRGKzcbgoPFdECGA\u0026p_dialog_cs=IkOIP5h-FIMKP2iQS6hf3WtGaXYCGi_1qCqrp4orqnrWewOzqIfXCAyk8Fpt0UMir6oPXjlsG6X-afMODfn9MQ&#39;,{title:&#39;Save Session&#39;,h:&#39;auto&#39;,w:&#39;720&#39;,mxw:&#39;960&#39;,modal:true,dialog:null,dlgCls:&#39;t-Dialog-page--standard &#39;+&#39;&#39;},&#39;&#39;,apex.jQuery(&#39;#save_session&#39;))" type="button" id="save_session"><span class="t-Icon t-Icon--left fa fa-save" aria-hidden="true"></span><span class="t-Button-label">Save</span><span class="t-Icon t-Icon--right fa fa-save" aria-hidden="true"></span></button><button class="t-Button t-Button--icon t-Button--iconRight t-Button--padLeft t-Button--hot" aria-controls="statement_result" onclick="void(0);" type="button" id="B17279509182825677"><span class="t-Icon t-Icon--left fa fa-play-circle" aria-hidden="true"></span><span class="t-Button-label">Run</span><span class="t-Icon t-Icon--right fa fa-play-circle" aria-hidden="true"></span></button></div>
+  </div>
+  <div class="t-BreadcrumbRegion-bottom"></div>
+</nav>
+</div>
+    <div class="t-Body-content" id="t_Body_content"><div id="t_Body_content_offset"></div>
+      <main id="main" class="t-Body-mainContent">
+        <span id="APEX_SUCCESS_MESSAGE" data-template-id="5712536473689076_S" class="apex-page-success u-hidden"></span><span id="APEX_ERROR_MESSAGE" data-template-id="5712536473689076_E" class="apex-page-error u-hidden"></span>
+        <div class="t-Body-fullContent"></div>
+        <div class="t-Body-contentInner"><div class="t-Body-contentInner2" style="height: 478px; width: 1038px;"> 
+<div id="editor_panel" class="resize"> 
+<div id="editor_splitter" style="height: 478px; position: relative;" class="resize a-Splitter"> 
+<div id="sql_panel" aria-label="SQL Editor" class="resize" style="position: absolute; width: 1038px; height: 300px; top: 0px;"><div id="editor" style="height: 100%;"><div class="cm-editor ͼ1 ͼ2 ͼ4 cm-light"><div aria-live="polite" style="position: fixed; top: -10000px;"></div><div tabindex="-1" class="cm-scroller"><div class="cm-gutters" aria-hidden="true" style="min-height: 1203.22px; position: sticky;"><div class="cm-gutter cm-lineNumbers"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;">99</div><div class="cm-gutterElement cm-activeLineGutter" style="height: 19.5938px; margin-top: 4px;">1</div><div class="cm-gutterElement" style="height: 19.5938px;">2</div><div class="cm-gutterElement" style="height: 19.5938px;">3</div><div class="cm-gutterElement" style="height: 19.5938px;">4</div><div class="cm-gutterElement" style="height: 19.5938px;">5</div><div class="cm-gutterElement" style="height: 19.5938px;">6</div><div class="cm-gutterElement" style="height: 19.5938px;">7</div><div class="cm-gutterElement" style="height: 19.5938px;">8</div><div class="cm-gutterElement" style="height: 19.5938px;">9</div><div class="cm-gutterElement" style="height: 19.5938px;">10</div><div class="cm-gutterElement" style="height: 19.5938px;">11</div><div class="cm-gutterElement" style="height: 19.5938px;">12</div><div class="cm-gutterElement" style="height: 19.5938px;">13</div><div class="cm-gutterElement" style="height: 19.5938px;">14</div><div class="cm-gutterElement" style="height: 19.5938px;">15</div><div class="cm-gutterElement" style="height: 19.5938px;">16</div><div class="cm-gutterElement" style="height: 19.5938px;">17</div><div class="cm-gutterElement" style="height: 19.5938px;">18</div><div class="cm-gutterElement" style="height: 19.5938px;">19</div><div class="cm-gutterElement" style="height: 19.5938px;">20</div><div class="cm-gutterElement" style="height: 19.5938px;">21</div><div class="cm-gutterElement" style="height: 19.5938px;">22</div><div class="cm-gutterElement" style="height: 19.5938px;">23</div><div class="cm-gutterElement" style="height: 19.5938px;">24</div><div class="cm-gutterElement" style="height: 19.5938px;">25</div><div class="cm-gutterElement" style="height: 19.5938px;">26</div><div class="cm-gutterElement" style="height: 19.5938px;">27</div><div class="cm-gutterElement" style="height: 19.5938px;">28</div><div class="cm-gutterElement" style="height: 19.5938px;">29</div><div class="cm-gutterElement" style="height: 19.5938px;">30</div><div class="cm-gutterElement" style="height: 19.5938px;">31</div><div class="cm-gutterElement" style="height: 19.5938px;">32</div><div class="cm-gutterElement" style="height: 19.5938px;">33</div><div class="cm-gutterElement" style="height: 19.5938px;">34</div><div class="cm-gutterElement" style="height: 19.5938px;">35</div><div class="cm-gutterElement" style="height: 19.5938px;">36</div><div class="cm-gutterElement" style="height: 19.5938px;">37</div><div class="cm-gutterElement" style="height: 19.5938px;">38</div><div class="cm-gutterElement" style="height: 19.5938px;">39</div><div class="cm-gutterElement" style="height: 19.5938px;">40</div><div class="cm-gutterElement" style="height: 19.5938px;">41</div><div class="cm-gutterElement" style="height: 19.5938px;">42</div><div class="cm-gutterElement" style="height: 19.5938px;">43</div><div class="cm-gutterElement" style="height: 19.5938px;">44</div><div class="cm-gutterElement" style="height: 19.5938px;">45</div><div class="cm-gutterElement" style="height: 19.5938px;">46</div><div class="cm-gutterElement" style="height: 19.5938px;">47</div><div class="cm-gutterElement" style="height: 19.5938px;">48</div><div class="cm-gutterElement" style="height: 19.5938px;">49</div><div class="cm-gutterElement" style="height: 19.5938px;">50</div><div class="cm-gutterElement" style="height: 19.5938px;">51</div><div class="cm-gutterElement" style="height: 19.5938px;">52</div><div class="cm-gutterElement" style="height: 19.5938px;">53</div><div class="cm-gutterElement" style="height: 19.5938px;">54</div><div class="cm-gutterElement" style="height: 19.5938px;">55</div><div class="cm-gutterElement" style="height: 19.5938px;">56</div><div class="cm-gutterElement" style="height: 19.5938px;">57</div><div class="cm-gutterElement" style="height: 19.5938px;">58</div><div class="cm-gutterElement" style="height: 19.5938px;">59</div><div class="cm-gutterElement" style="height: 19.5938px;">60</div><div class="cm-gutterElement" style="height: 19.5938px;">61</div></div><div class="cm-gutter cm-foldGutter"><div class="cm-gutterElement" style="height: 0px; visibility: hidden; pointer-events: none;"><span title="Unfold line">›</span></div><div class="cm-gutterElement cm-activeLineGutter" style="height: 19.5938px; margin-top: 4px;"></div><div class="cm-gutterElement" style="height: 19.5938px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 19.5938px; margin-top: 391.875px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 19.5938px; margin-top: 293.906px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 19.5938px; margin-top: 39.1875px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 19.5938px; margin-top: 78.375px;"><span title="Fold line">⌄</span></div><div class="cm-gutterElement" style="height: 19.5938px; margin-top: 58.7812px;"><span title="Fold line">⌄</span></div></div></div><div spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" contenteditable="true" class="cm-content" style="tab-size: 4;" role="textbox" aria-multiline="true" data-language="sql"><div class="cm-activeLine cm-line"><span class="ͼm">-- Creating Table</span></div><div class="cm-line"><span class="ͼb">create</span> <span class="ͼb">table</span> Aadhar_details(</div><div class="cm-line">    Aadhar_number <span class="ͼi">number</span> <span class="ͼb">primary</span> <span class="ͼb">key</span>,</div><div class="cm-line">    Name <span class="ͼi">varchar2</span>(<span class="ͼd">100</span>) <span class="ͼb">not</span> <span class="ͼb">null</span>,</div><div class="cm-line">    Address <span class="ͼi">varchar2</span>(<span class="ͼd">100</span>) <span class="ͼb">not</span> <span class="ͼb">null</span>,</div><div class="cm-line">    Mobile_no <span class="ͼi">number</span> <span class="ͼb">not</span> <span class="ͼb">null</span>,</div><div class="cm-line">    Email <span class="ͼi">varchar2</span>(<span class="ͼd">50</span>) <span class="ͼb">not</span> <span class="ͼb">null</span>);</div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼm">-- Checking if table is created or not</span></div><div class="cm-line"><span class="ͼm">-- Use DESC table_name, not just DESC table_name</span></div><div class="cm-line"><span class="ͼm">-- Also, DESC is a SQL*Plus command, not a standard SQL command.</span></div><div class="cm-line"><span class="ͼm">-- You can use SELECT * FROM user_tab_columns WHERE table_name = 'Aadhar_details' instead.</span></div><div class="cm-line"><span class="ͼm">-- But for this case, you can skip the DESC command.</span></div><div class="cm-line"><span class="ͼm">-- desc Aadhar_details;</span></div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼm">-- Inserting data into the table.</span></div><div class="cm-line"><span class="ͼb">insert</span> <span class="ͼb">into</span> Aadhar_details <span class="ͼb">values</span>(<span class="ͼd">464510464759</span>, <span class="ͼe">'John Wick'</span>, <span class="ͼe">'Mumbai'</span>, <span class="ͼd">9664887869</span>, <span class="ͼe">'wickjohn05@gmail.com'</span>);</div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼm">-- Checking that data is inserted...</span></div><div class="cm-line"><span class="ͼb">select</span> * <span class="ͼb">from</span> Aadhar_details;</div><div class="cm-line"><br></div><div class="cm-line"><span class="ͼm">-- Creating a procedure for Aadhar Updation.</span></div><div class="cm-line"><span class="ͼb">create</span> <span class="ͼb">or</span> <span class="ͼb">replace</span> <span class="ͼb">procedure</span> Updation_Aadhar(</div><div class="cm-line">    P_Aadhar_number <span class="ͼi">number</span>,</div><div class="cm-line">    P_Name <span class="ͼi">varchar2</span>,</div><div class="cm-line">    P_Address <span class="ͼi">varchar2</span>,</div><div class="cm-line">    P_Mobile_no <span class="ͼi">number</span>,</div><div class="cm-line">    P_Email <span class="ͼi">varchar2</span>,</div><div class="cm-line">    P_status <span class="ͼb">out</span> <span class="ͼi">varchar2</span>)</div><div class="cm-line"><span class="ͼb">As</span></div><div class="cm-line"><span class="ͼb">begin</span></div><div class="cm-line">    <span class="ͼb">Update</span> Aadhar_details</div><div class="cm-line">    <span class="ͼb">set</span> Name = P_Name,</div><div class="cm-line">        Address = P_Address,</div><div class="cm-line">        Mobile_no = P_Mobile_no,</div><div class="cm-line">        Email = P_Email</div><div class="cm-line">    <span class="ͼb">where</span> Aadhar_number = P_Aadhar_number;</div><div class="cm-line">    </div><div class="cm-line">    <span class="ͼb">if</span> <span class="ͼb">sql</span>%<span class="ͼb">found</span> <span class="ͼb">then</span></div><div class="cm-line">        <span class="ͼb">commit</span>;</div><div class="cm-line">        P_status := <span class="ͼe">'Aadhar updated successfully.'</span>;</div><div class="cm-line">    <span class="ͼb">else</span></div><div class="cm-line">        <span class="ͼb">rollback</span>;</div><div class="cm-line">        P_status := <span class="ͼe">'There is a mistake, Please try again after some time.'</span>;</div><div class="cm-line">    <span class="ͼb">end</span> <span class="ͼb">if</span>;</div><div class="cm-line"><span class="ͼb">end</span> Updation_Aadhar;</div><div class="cm-line">/</div><div class="cm-line"><span class="ͼm">-- Executing Procedure</span></div><div class="cm-line"><span class="ͼb">Declare</span></div><div class="cm-line">    <span class="ͼb">Result</span> <span class="ͼi">varchar2</span>(<span class="ͼd">100</span>);</div><div class="cm-line"><span class="ͼb">Begin</span></div><div class="cm-line">    Updation_Aadhar(</div><div class="cm-line">        P_Aadhar_number =&gt; <span class="ͼd">464510464759</span>,</div><div class="cm-line">        P_Name =&gt; <span class="ͼe">'Ramesh Wick'</span>,</div><div class="cm-line">        P_Address =&gt; <span class="ͼe">'Delhi'</span>, <span class="ͼm">-- Missing comma</span></div><div class="cm-line">        P_Mobile_no =&gt; <span class="ͼd">9664887869</span>, <span class="ͼm">-- Added missing value</span></div><div class="cm-line">        P_Email =&gt; <span class="ͼe">'wickjohn05@gmail.com'</span>, <span class="ͼm">-- Added missing value</span></div><div class="cm-line">        P_status =&gt; <span class="ͼb">Result</span>);</div><div class="cm-line">    Dbms_output.Put_line(<span class="ͼb">Result</span>);</div><div class="cm-line"><span class="ͼb">End</span>;</div><div class="cm-line"><br></div></div><div class="cm-layer cm-layer-above cm-cursorLayer" aria-hidden="true" style="z-index: 150; animation-duration: 1200ms;"><div class="cm-cursor cm-cursor-primary" style="left: 40.1719px; top: 5px; height: 17px;"></div></div><div class="cm-layer cm-selectionLayer" aria-hidden="true" style="z-index: -2;"></div></div></div></div><input type="hidden" name="P1_SQL" id="P1_SQL" value="-- Creating Table
+create table Aadhar_details(
+    Aadhar_number number primary key,
+    Name varchar2(100) not null,
+    Address varchar2(100) not null,
+    Mobile_no number not null,
+    Email varchar2(50) not null);
+
+-- Checking if table is created or not
+-- Use DESC table_name, not just DESC table_name
+-- Also, DESC is a SQL*Plus command, not a standard SQL command.
+-- You can use SELECT * FROM user_tab_columns WHERE table_name = &#39;Aadhar_details&#39; instead.
+-- But for this case, you can skip the DESC command.
+-- desc Aadhar_details;
+
+-- Inserting data into the table.
+insert into Aadhar_details values(464510464759, &#39;John Wick&#39;, &#39;Mumbai&#39;, 9664887869, &#39;wickjohn05@gmail.com&#39;);
+
+-- Checking that data is inserted...
+select * from Aadhar_details;
+
+-- Creating a procedure for Aadhar Updation.
+create or replace procedure Updation_Aadhar(
+    P_Aadhar_number number,
+    P_Name varchar2,
+    P_Address varchar2,
+    P_Mobile_no number,
+    P_Email varchar2,
+    P_status out varchar2)
+As
+begin
+    Update Aadhar_details
+    set Name = P_Name,
+        Address = P_Address,
+        Mobile_no = P_Mobile_no,
+        Email = P_Email
+    where Aadhar_number = P_Aadhar_number;
+    
+    if sql%found then
+        commit;
+        P_status := &#39;Aadhar updated successfully.&#39;;
+    else
+        rollback;
+        P_status := &#39;There is a mistake, Please try again after some time.&#39;;
+    end if;
+end Updation_Aadhar;
+/
+-- Executing Procedure
+Declare
+    Result varchar2(100);
+Begin
+    Updation_Aadhar(
+        P_Aadhar_number =&gt; 464510464759,
+        P_Name =&gt; &#39;Ramesh Wick&#39;,
+        P_Address =&gt; &#39;Delhi&#39;, -- Missing comma
+        P_Mobile_no =&gt; 9664887869, -- Added missing value
+        P_Email =&gt; &#39;wickjohn05@gmail.com&#39;, -- Added missing value
+        P_status =&gt; Result);
+    Dbms_output.Put_line(Result);
+End;
+"></div><div class="a-Splitter-barV ui-draggable ui-draggable-handle" title="Resize Code Editor" style="position: absolute; left: 0px; top: 300px; width: 1038px;"><div></div><button role="separator" class="a-Splitter-thumb" type="button" aria-expanded="true" aria-label="Resize Splitter"></button></div><div id="statement_result" class="results-container" style="position: absolute; width: 1038px; height: 170px; top: 308px;"><div class="results-div" id="results">
+<span class="results-null-msg">SQL Statement Output</span>
+</div>
+</div>
+</div>
+</div>
+<div id="R1076522878789928254" class=""><input type="hidden" name="P1_SAMPLE_ID" id="P1_SAMPLE_ID" value=""><input type="hidden" data-for="P1_SAMPLE_ID" value="mrDcqKoI_QQbwYhbSISKAit6UhYPwNCV57pNNPfcEocINMKN9MJynqC3-PbcUBie2PBBlH4IY-MdKgshPwrEow"><input type="hidden" name="P1_MIN_RESULT_SEQ" id="P1_MIN_RESULT_SEQ" value="2480790128"><input type="hidden" data-for="P1_MIN_RESULT_SEQ" value="50GZnwHx09sG90roJjvPIg7FNdITudmCXeGspx7LHD9sbVkQIsgx_eB6WGDK2kqwMLECEiQCpjFPCgvkb2MCjw"><input type="hidden" name="P1_SHOW_LEARN_SIDEBAR" id="P1_SHOW_LEARN_SIDEBAR" value="N"><input type="hidden" data-for="P1_SHOW_LEARN_SIDEBAR" value="2gvKMYK2LFxzplV0oY3MJiFAn5gW-qRFRQqIfe2n-cSefo1oRU0uG_QT-YWrIRq6eof30XBPznNYMPjLyM1AAg"><input type="hidden" name="P1_LEARN_CONTEXT" id="P1_LEARN_CONTEXT" value=""><input type="hidden" data-for="P1_LEARN_CONTEXT" value="TPLym_AJXyMAik_lcxmCpnkgLeVni14nkVGS1FLhKV7nymW7gkP_T6Tafyb9wdZweUwY-YNetCQbZm5JfHFYMg"><input type="hidden" name="P1_SQL2" id="P1_SQL2" value="create or replace procedure Updation_Aadhar(
+    P_Aadhar_number number,
+    P_Name varchar2,
+    P_Address varchar2,
+    P_Mobile_no number,
+    P_Email varchar2,
+    P_status out varchar2)
+As
+begin
+    Update Aadhar_details
+    set Name = P_Name,
+        Address = P_Address,
+        Mobile_no = P_Mobile_no,
+        Email = P_Email
+    where Aadhar_number = P_Aadhar_number;
+    
+    if sql%found then
+        commit;
+        P_status := &#39;Aadhar updated successfully.&#39;;
+    else
+        rollback;
+        P_status := &#39;There is a mistake, Please try again after some time.&#39;;
+    end if;
+end Updation_Aadhar;
+/
+-- Executing Procedure
+Declare
+    Result varchar2(100);
+Begin
+    Updation_Aadhar(
+        P_Aadhar_number =&gt; 464510464759,
+        P_Name =&gt; &#39;Ramesh Wick&#39;,
+        P_Address =&gt; &#39;Delhi&#39;, -- Missing comma
+        P_Mobile_no =&gt; 9664887869, -- Added missing value
+        P_Email =&gt; &#39;wickjohn05@gmail.com&#39;, -- Added missing value
+        P_status =&gt; Result);
+    Dbms_output.Put_line(Result);
+End;
+"><input type="hidden" data-for="P1_SQL2" value="CCOsEtEAGlDWdigS9pIHTO_5PxOYnmG-rYuvJP0F2fR2S4rCAfSuXi3T5Ok-DizXBJpJD-J-sF9ZZo3asOYo0w"><input type="hidden" name="P1_NOTIF_ID" id="P1_NOTIF_ID" value=""><input type="hidden" data-for="P1_NOTIF_ID" value="sgQFf2dl8Knl1ozo1v6KABAZOVtemc8DVdoLo_W0tQhon4NuKKUg68WzjARxnsu-P66TQ136jHqgmW8U5h_7jA"><input type="hidden" name="P1_STATEMENT_ID" id="P1_STATEMENT_ID" value=""><input type="hidden" data-for="P1_STATEMENT_ID" value="NgoC_z0U--aPHfbcAqtXO0gc45Fk5EEvPc9DQ654tjLCOjI303THkrnu2d3XKYJxJ75eW8UmV3lk_evjBRytig"><input type="hidden" name="P1_PREF_LINE_NUMBERS" id="P1_PREF_LINE_NUMBERS" value="Y"><input type="hidden" data-for="P1_PREF_LINE_NUMBERS" value="nl9xbUQpfmsAUsFHC8ZEyOriAN7W4Vl1FEOY2Cg4Fm2nD6Mdb5loH0LaIvmFqNp6uTXiCXq-omfrD7cRAOtDPg"><input type="hidden" name="P1_PREF_CLOSE_BRACKETS" id="P1_PREF_CLOSE_BRACKETS" value="Y"><input type="hidden" data-for="P1_PREF_CLOSE_BRACKETS" value="_B3ybz6nvHxUHbEd-7IIKECQ7ApvlTxfu9bSK9Rx7X-nPloy94j2QniMgr1UWi6dJHoI0UbTfeK2tq6I0xVJRQ"><input type="hidden" name="P1_PREF_FONT_SIZE_PX" id="P1_PREF_FONT_SIZE_PX" value=""><input type="hidden" data-for="P1_PREF_FONT_SIZE_PX" value="6MLytx-s2FTaY9NCZ-fX0GauCdSWF5rygNxfUNdGRdhbGB0cyWqhjjmrJqBLzJCnjY9QO9kq9Qbpf7uQEYwtmQ"></div><div id="R1078776566488977187" class=""><div class="script-info">
+<strong>Script:</strong> Aadhar_updation_Project 
+<div class="script-actions">
+</div>
+</div>
+</div></div></div>
+      </main>
+      <footer class="t-Footer" id="t_Footer" role="contentinfo">
+        <div class="t-Footer-body">
+          <div class="t-Footer-content"><div id="R1012157221149035436" class=""><span class="footer-sql"> 2023 Oracle</span> · Live SQL 23.3.3, running Oracle Database 19c EE Extreme Perf - 19.17.0.0.0 · <a href="https://docs.oracle.com/en/database/oracle/oracle-database/" target="_blank">Database Documentation</a>  · <a href="https://asktom.oracle.com/pls/apex/f?p=100:::::::" target="_blank">Ask Tom</a> · <a href="https://devgym.oracle.com/" target="_blank">Dev Gym</a><br><span class="u-BuiltWithAPEX">Built with <span class="fa fa-heart"><span class="u-VisuallyHidden">love</span></span> using <a href="https://apex.oracle.com/" target="_blank">Oracle APEX</a> · <a href="http://www.oracle.com/us/legal/privacy/overview/index.html" target="_blank">Privacy</a>  · <a href="http://www.oracle.com/us/legal/terms/index.html" target="_blank">Terms of Use</a> </span></div><h1 class="u-VisuallyHidden">SQL Worksheet</h1>
+</div>
+          <div class="t-Footer-apex">
+            <div class="t-Footer-version">23.3.3</div>
+            <div class="t-Footer-customize"></div>
+            
+          </div>
+        </div>
+        <div class="t-Footer-top">
+          <a href="https://livesql.oracle.com/apex/f?p=590:1:110986652131053:::::#top" class="t-Footer-topButton" id="t_Footer_topButton" title="Start of page"><span class="a-Icon icon-up-chevron"></span></a>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+<div class="t-Body-inlineDialogs" id="t_Body_inlineDialogs"></div><input type="hidden" id="pPageFormRegionChecksums" value="[]">
+<input type="hidden" id="pPageItemsRowVersion" value=""><input type="hidden" id="pPageItemsProtected" value="UDFfU0FNUExFX0lEOlAxX01JTl9SRVNVTFRfU0VROlAxX1NIT1dfTEVBUk5fU0lE.,RUJBUjpQMV9MRUFSTl9DT05URVhUOlAxX1NRTDI6UDFfTk9USUZfSUQ6UDFfU1RB.,VEVNRU5UX0lEOlAxX1BSRUZfTElORV9OVU1CRVJTOlAxX1BSRUZfQ0xPU0VfQlJB.,Q0tFVFM6UDFfUFJFRl9GT05UX1NJWkVfUFg/tOR1Et_e3yV-AnuyGNo8h3rnBfmDj76-OQ48-KWMfLOXHtRVGKF5I6t23eYVoafxovpk47BFtgrCr0BFdiK62g"></form>
+
+
+<script>
+var apex_img_dir = "\u002Fi\u002F";
+var apex = {env: {APP_USER: "ORGANIZERST@GMAIL.COM",APP_ID: "590",APP_PAGE_ID: "1",APP_SESSION: "110986652131053",APP_FILES: "r\u002Flivesql\u002F590\u002Ffiles\u002Fstatic\u002Fv430\u002F",WORKSPACE_FILES: "r\u002Flivesql\u002Ffiles\u002Fstatic\u002Fv1\u002F",APEX_VERSION: "22.1.3",APEX_BASE_VERSION: "22.1"},
+libVersions:{ckeditor5:"32.0.0",cropperJs:"1.5.12",domPurify:"2.3.1",hammer:"2.0.8",jquery:"3.6.0",jqueryUi:"1.13.1",maplibre:"1.15.2",markedJs:"4.0.12",prismJs:"1.26.0",oraclejet:"12.0.0",monacoEditor:"0.32.1",lessJs:"4.1.1"}};
+</script>
+<script src="./Aadhar_updation_project_files/desktop_all.min.js.download"></script>
+<script src="./Aadhar_updation_project_files/wwv_flow.js_messages"></script>
+
+<script type="text/javascript">
+apex.da.initDaEventList = function(){
+apex.da.gEventList = [
+{"triggeringElementType":"BUTTON","triggeringButtonId":"B17279509182825677","bindType":"bind","bindEventType":"click","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,javascriptFunction:function (){ apex.livesql.run();
+},"action":"NATIVE_JAVASCRIPT_CODE"}]},
+{"triggeringElementType":"ITEM","triggeringElement":"P0_DARKMODE","bindType":"bind","bindEventType":"change","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,javascriptFunction:function (){ $( "body" )
+    .toggleClass( "is-darkmode", apex.items.P0_DARKMODE.value == 'Y' )
+    .trigger( "theme-change" );
+},"action":"NATIVE_JAVASCRIPT_CODE"},{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,"waitForResult":true,javascriptFunction:apex.da.executePlSqlCode,"ajaxIdentifier":"REEgVFlQRX5-NDIzNTg3NTQ4MTExNTEwOQ\u002F9hGocyMnlSKXWxxgmJEEd90qtjnSz-SURwIJ7Gzkfe2FGGNYISKEA4LuqpeDd8DOoiVbM3YSKq103TSsk5sY5g","attribute01":"#P0_DARKMODE","attribute04":"N","action":"NATIVE_EXECUTE_PLSQL_CODE"}]},
+{"triggeringElementType":"BUTTON","triggeringButtonId":"B17277945223825675","bindType":"bind","bindEventType":"click","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,javascriptFunction:function (){ CodeEditor[ "editor" ].setValue( "" );
+CodeEditor[ "editor" ].focus();
+
+$("#results .msg").remove();
+$("#results").html('<span class="results-null-msg">SQL Statement Output</span>');
+},"action":"NATIVE_JAVASCRIPT_CODE"}]},
+{"triggeringElementType":"JQUERY_SELECTOR","triggeringElement":".dismiss-notification-button","bindType":"live","bindEventType":"click","anyActionsFireOnInit":false,actionList:[{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,javascriptFunction:function (){ var alert_id = $(this.triggeringElement).data("notification-id");
+$s('P1_NOTIF_ID',alert_id);
+},"action":"NATIVE_JAVASCRIPT_CODE"},{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,"waitForResult":true,javascriptFunction:apex.da.executePlSqlCode,"ajaxIdentifier":"REEgVFlQRX5-MTcyOTk1MjgyOTc4MjU3MDA\u002FHYg9v15FS6-KulnezImYtLYfkqkBqqa_9rXD-2vFx_xjz7p3w9-sno2_o5Wj8OuJG1oiAhYF9KECexhK1fig9g","attribute01":"#P1_NOTIF_ID","attribute02":"#P1_NOTIF_ID","attribute04":"N","action":"NATIVE_EXECUTE_PLSQL_CODE"},{"eventResult":true,"executeOnPageInit":false,"stopExecutionOnError":true,"affectedElementsType":"REGION","affectedRegionId":"R3306796426393505472",javascriptFunction:apex.da.refresh,"action":"NATIVE_REFRESH"}]}];
+}
+</script>
+
+<script src="./Aadhar_updation_project_files/widget.stickyWidget.min.js.download"></script>
+<script src="./Aadhar_updation_project_files/theme42.min.js.download"></script>
+
+
+<script src="./Aadhar_updation_project_files/script.min.js.download"></script>
+<script src="./Aadhar_updation_project_files/table2CSV.js.download"></script>
+<script src="./Aadhar_updation_project_files/widget.apexTabs.min.js.download"></script>
+
+<script src="./Aadhar_updation_project_files/widget.splitter.js.download"></script>
+<script src="./Aadhar_updation_project_files/xmlRenderer.min.js.download"></script>
+<script src="./Aadhar_updation_project_files/xmlPrettyPrint.min.js.download"></script>
+<script src="./Aadhar_updation_project_files/jsonPrettyPrint.min.js.download"></script>
+<script src="./Aadhar_updation_project_files/editor.bundle.min.js.download"></script>
+<script type="text/javascript">
+function checkJSON(str){
+  try {
+    var json = JSON.parse(str);
+    if (json && typeof json === "object") {
+      return json;
+    }
+  }
+  catch (e) { }
+  return false;
+};
+
+function formatXML() {
+    $('.format-xml').each(function(){
+    var parser = new DOMParser();
+    var xmlDocument = parser.parseFromString($(this).text(),"text/xml");
+    xmlPP.print(xmlDocument, $(this)[0]);
+    });
+};
+
+function formatJSON() {
+  $('.u-Report td').each(function(){
+    cell$ = $(this);
+    var cell_text = $(this).text();
+    if (checkJSON(cell_text)) {
+      cell$.addClass("format-xml").text("");
+      var jp = JSON.parse(cell_text);
+      jPP.printJson(cell$[0],null,jp);
+      //  cell$.html( cell_text );x
+    }
+  });
+}
+
+function updateEditorItems() {
+    // gets highlighted statement and sets to P1_SQL2 value
+    const editor = CodeEditor[ "editor" ];
+    apex.items.P1_SQL.value  = editor.getValue();
+    apex.items.P1_SQL2.value = editor.getSelection();
+}
+
+(function() {
+    // be reused for the ctrl+enter command listed in "execute on page load."
+    var result = 1;
+    apex.livesql = {
+        run: function() {
+            updateEditorItems();
+            apex.server.process( "run_statement", {
+                pageItems: [ "P1_SQL", "P1_SQL2" ]
+            }, {
+                dataType: "text",
+                loadingIndicatorPosition: "page",
+                success: function( pData ) {
+                    var renderedData$ = $(pData);
+                    renderedData$.find("table").each(function() {
+                        var table$ = $(this);
+                        table$.before("<h2 class='visuallyhidden'>Result Set " + result + "</h2>");
+                        table$.attr("summary", "Results from query " + result);
+                        result++;
+                    });
+                    $( "#statement_result" ).empty().append(renderedData$);
+                    // show buttons as soon as we have executed one statement
+                    // $( "#reset_session,#save_session" ).show();
+                    $("#save_session").removeClass("apex_disabled");
+                    $("#save_session").attr("disabled", false);
+                    formatXML();
+                    formatJSON();
+                    createCSVDownloadLink('.results-div table.u-Report');
+                }
+            });
+        }
+    };
+})();
+</script>  
+
+
+<script src="./Aadhar_updation_project_files/widget.treeView.min.js.download"></script>
+
+
+
+
+
+
+
+
+
+
+<script src="./Aadhar_updation_project_files/require.js.download"></script>
+<script src="./Aadhar_updation_project_files/requirejs.jetConfig.min.js.download"></script>
+<script src="./Aadhar_updation_project_files/jetCommonBundle.min.js.download"></script>
+<script src="./Aadhar_updation_project_files/codeEditor.min.js.download"></script>
+<script type="text/javascript">
+apex.session.initTimeouts(300,{"idle_time_ms":3595999.99999999999999999999999999999999,"life_time_ms":24246000,"max_idle_time_ms":3600000},'f?p=590:1000::::::','f?p=590:1000::::::');
+apex.jQuery( function() {
+apex.page.init( this, function() {
+try {
+(function(){apex.widget.yesNo("P0_DARKMODE","SWITCH_CB");})();
+(function(){apex.jQuery('body').addClass('t-PageBody--leftNav');})();
+(function(){var e = apex.jQuery("#actions_menu", apex.gPageContext$);
+if (e.hasClass("js-addActions")) {
+  apex.actions.addFromMarkup( e );
+}
+e.menu({ iconType: 'fa', callout: e.hasClass("js-menu-callout")});})();
+} catch(e) {apex.debug.error(e)};
+apex.item.waitForDelayLoadItems().done(function() {
+try {
+(function(){apex.da.initDaEventList();
+apex.da.init();})();
+apex.theme42.initializePage.noSideCol();
+/**
+ * The following page structure is assumed for the resizing and splitters to work:
+ * 
+ *  div.t-Body-contentInner             - as output by APEX, +flex-basis: 0, +overflow: hidden
+ *      div.t-Body-contentInner2        - all content will be wrapped in this div, which has an absolute size, based on .t-Body-contentInner
+ *          div#main_splitter.resize
+ *              div#editor_panel.resize
+ *                  div#editor_splitter
+ *                      div#sql_panel
+ *                      div#statement_result
+ *              div#tutorial_panel
+ */
+
+// the artificially created .t-Body-contentInner2 will be a container will absolute sizing
+// based on the flex size of .t-Body-contentInner
+$(".t-Body-contentInner").children().wrapAll("<div class='t-Body-contentInner2'></div>");
+
+const
+    bodyContainerInner$ = $(".t-Body-contentInner"),
+    bodyContainerInner2$ = $(".t-Body-contentInner2"),
+    editor$ = $("#editor");
+
+// when .t-Body-contentInner changes size, change .t-Body-contentInner2 to match
+const resizeObserver = new ResizeObserver(apex.util.debounce(() => {
+    const height = bodyContainerInner$.height(),
+        width = bodyContainerInner$.width();
+    bodyContainerInner2$
+        .height(height)
+        .width(width);
+    $("#main_splitter").height(height);
+    $("#editor_splitter").height(height);
+    $("#main_splitter").trigger("resize");
+    $("#editor_splitter").trigger("resize");
+}, 200));
+
+resizeObserver.observe(bodyContainerInner$[0]);
+
+$("#editor_splitter").on("resize", function (e) {
+    e.stopPropagation();
+});
+
+$("#editor_panel").on("resize", function (e) {
+    $("#editor_splitter").trigger("resize");
+});
+
+$('#results').scrollTop($('#results')[0].scrollHeight);
+
+const mainSplitterChildCount = $("#main_splitter").children().length;
+
+if (mainSplitterChildCount === 1) {
+    // remove main splitter to keep things simple
+    $("#main_splitter").contents().unwrap();
+} else if (mainSplitterChildCount === 2) {
+    $("#main_splitter").splitter({
+        orientation: "horizontal",
+        positionedFrom: "end",
+        title: "Resize Tutorial",
+        position: 600,
+        change: function () {
+        }
+    });
+} else {
+    throw new Error("main_splitter has an unexpected child count");
+}
+
+$("#editor_splitter").splitter({
+    orientation: "vertical",
+    title: "Resize Code Editor",
+    position: 300,
+    collapsed: false,
+    change: function () {
+    }
+});
+
+$("#tutorial_panel ol li a").click(function (e) {
+    var href = $(e.target).attr("href");
+    $("#tutorial_panel").animate({
+        scrollTop: $(href).offset().top - apex.theme.defaultStickyTop() - 10
+    })
+    e.preventDefault();
+    return false;
+});
+
+
+$(".SQLSTATEMENT").each(function (index) {
+    var button$ = $('<button class="t-Button t-Button--small" type="button"><span class="t-Icon fa fa-clipboard "></span> Insert into Editor <span class="u-VisuallyHidden">Code Block ' + (index + 1) + '</span></button>');
+    $(this).after(button$);
+    var text = $(this).text();
+    button$.click(function () {
+        const editor = CodeEditor[ "editor" ];
+        editor.setValue( text );
+        editor.focus();
+        editor.setCursorToEnd();
+    });
+});
+
+/*
+(function() {
+    var tabAfterAce = function( next ) {
+        var tabbables$ = $(":tabbable");
+        var runningPrevious$ = $([]);
+        var previous$ = tabbables$.last();
+        var next$ = tabbables$.first();
+        var encounteredEl = false;
+        tabbables$.each(function() {
+            var tabbable$ = $(this);
+            if (encounteredEl) {
+                next$ = tabbable$;
+                return false;
+            }
+            encounteredEl = $(this).hasClass("ace_text-input");
+            if (encounteredEl) {
+                previous$ = runningPrevious$;
+            }
+            runningPrevious$ = tabbable$;
+        });
+        if ( next ) {
+            next$.focus();
+        } else {
+            previous$.focus();
+        }
+    };
+
+    sqlEditor.commands.addCommand({
+        name: "escape tab to next",
+        bindKey: {win: "Alt-F6", mac: "Alt-F6"},
+        exec: function(editor) {
+            tabAfterAce ( true );
+        }
+    });
+    sqlEditor.commands.addCommand({
+        name: "escape tab to previous",
+        bindKey: {win: "Alt-Shift-F6", mac: "Alt-Shift-F6"},
+        exec: function(editor) {
+            tabAfterAce ( false );
+        }
+    });
+})();
+*/
+
+$("button.a-Splitter-thumb").attr("aria-label", "Resize Splitter");
+
+// Configure the editor
+livesql.initWorksheetEditor();
+} finally {
+apex.event.trigger(apex.gPageContext$,'apexreadyend');
+};
+});
+});
+});apex.pwa.registerServiceWorker('\u002Fapex\u002Fr\u002Flivesql\u002Flivesql\u002Fsw.js?v=22.1.3-142154676794\u0026lang=en');
+</script>
+
+
+
+<input id="apexCBMDummySelection" style="display:none;" value="x"><div id="pushModal" style="width: 100%; display:none; height: 100%;" class="u-DisplayNone u-Overlay--glass"></div><div id="actions_menu" class="a-Menu" style="display:none;" role="menu"><ul><li data-id="" data-disabled="" data-hide="" data-shortcut="" data-icon="fa fa-list-ol"><a href="https://livesql.oracle.com/apex/f?p=590:6:110986652131053:BACKTOONE::::&amp;cs=3h9i3e7xOeriVq8nYNnsDENz9BjDXqMQ8c-NwiJZ4_Baan-q7MXq0NIXdTZOE5z8Yex6thL8bHas7y3OFVYAIuw" title="" target="">View Session</a></li>
+<li data-id="" data-disabled="" data-hide="" data-shortcut="" data-icon="fa fa-undo"><a href="javascript:apex.theme42.dialog(&#39;f?p=590:20:110986652131053:::20::\u0026cs=3k8KxgrqJ6nikE6mNbq06kKEaGZZb6JIqqNHrX7LLYJ86LHb-39ngPnGBOte5XTupd79Px8hmRQz9G9bje22Z0w\u0026p_dialog_cs=LaCymq4vxOSasaOtEtrZoOhIkky__56Y9xByvD6NGeO0sv367fWZrjh3pL2AGwkh52nHffAbWtIrC4AKoDm8rQ&#39;,{title:&#39;Reset Session&#39;,h:&#39;auto&#39;,w:&#39;720&#39;,mxw:&#39;960&#39;,modal:true,dialog:null,dlgCls:&#39;t-Dialog-page--standard &#39;+&#39;&#39;},&#39;&#39;,apex.jQuery(&#39;#actions_menu&#39;))" title="" target="">Reset Session</a></li>
+<li data-id="" data-disabled="" data-hide="" data-shortcut="" data-icon="fa fa-table-wrench"><a href="javascript:apex.theme42.dialog(&#39;f?p=590:76:110986652131053\u0026p_dialog_cs=J5r7mzNbZMdT0BMi6Fg4Vw59Bcohs7ekE5Uw73wNcXckA6rmgeMt8nvF36JwCuaZWjo9HEZjfaJP65i1Mrl8Ww&#39;,{title:&#39;Preferences&#39;,h:&#39;auto&#39;,w:&#39;720&#39;,mxw:&#39;960&#39;,modal:true,dialog:null,dlgCls:&#39;t-Dialog-page--standard &#39;+&#39;&#39;},&#39;&#39;,apex.jQuery(&#39;#actions_menu&#39;))" title="" target="">Maximum Rows Preference</a></li>
+</ul></div><div class="t-NavigationBar-menu a-Menu" style="display: none" id="menu_L7178662666532670" role="menu"><ul><li class="" data-current="false" data-icon=""><a href="javascript:apex.theme42.dialog(&#39;f?p=590:8:110986652131053:::RP\u0026p_dialog_cs=4HZqBx9I9Bh8JnvK_01_V2ln95RxwC32aFBdVCD_qDGKwQncrvc58MlvE7K3bmJnd22Qc6Gym0sEdnCrcN6dmA&#39;,{title:&#39;Notifications&#39;,h:&#39;auto&#39;,w:&#39;720&#39;,mxw:&#39;960&#39;,modal:true,dialog:null,dlgCls:&#39;t-Dialog-page--standard &#39;+&#39;&#39;},&#39;&#39;,apex.gPageContext$)" title="" target="">Notifications</a></li><li class="" data-current="false" data-icon=""><a href="https://livesql.oracle.com/apex/apex_authentication.logout?p_app_id=590&amp;p_session_id=110986652131053" title="" target="">Sign Out</a></li></ul></div><div class="LImageHighlighter" data-image-id="null" style="display: none;"><div class="LImageHighlighter__btn LImageHighlighter__btn--static"><div class="LImageHighlighter__highlight"><div class="LImageHighlighter__iconBox"><div class="LImageHighlighter__icon"></div><div class="LImageHighlighter__color"></div></div><span class="LImageHighlighter__text">Highlight</span></div><div class="LImageHighlighter__optOutBox"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10.0044 10C9.79313 10 9.61458 9.92812 9.46875 9.78438C9.32292 9.64062 9.25 9.4625 9.25 9.25V2.75C9.25 2.5375 9.32145 2.35937 9.46435 2.21562C9.60727 2.07187 9.78435 2 9.9956 2C10.2069 2 10.3854 2.07187 10.5312 2.21562C10.6771 2.35937 10.75 2.5375 10.75 2.75V9.25C10.75 9.4625 10.6785 9.64062 10.5356 9.78438C10.3927 9.92812 10.2156 10 10.0044 10ZM10 17C9.02778 17 8.11713 16.8153 7.26806 16.4458C6.41898 16.0764 5.68009 15.5773 5.0514 14.9486C4.42269 14.3199 3.92361 13.581 3.55417 12.7319C3.18472 11.8829 3 10.9722 3 10C3 9.18647 3.13889 8.39629 3.41667 7.62944C3.69444 6.86259 4.09028 6.16667 4.60417 5.54167C4.74306 5.36111 4.91667 5.26042 5.125 5.23958C5.33333 5.21875 5.51389 5.28472 5.66667 5.4375C5.80556 5.59028 5.88194 5.76736 5.89583 5.96875C5.90972 6.17014 5.86111 6.34722 5.75 6.5C5.3409 7 5.0303 7.54861 4.81819 8.14583C4.60606 8.74306 4.5 9.36111 4.5 10C4.5 11.5321 5.03318 12.8318 6.09954 13.8991C7.16592 14.9664 8.46453 15.5 9.99538 15.5C11.5262 15.5 12.8264 14.9664 13.8958 13.8991C14.9653 12.8318 15.5 11.5321 15.5 10C15.5 9.34722 15.3889 8.72569 15.1667 8.13542C14.9444 7.54514 14.6319 6.99306 14.2292 6.47917C14.1042 6.32639 14.0486 6.14931 14.0625 5.94792C14.0764 5.74653 14.1597 5.56944 14.3125 5.41667C14.4514 5.26389 14.625 5.20139 14.8333 5.22917C15.0417 5.25694 15.2207 5.35667 15.3704 5.52835C15.9013 6.16223 16.3056 6.86111 16.5833 7.625C16.8611 8.38889 17 9.18056 17 10C17 10.9722 16.8153 11.8829 16.4458 12.7319C16.0764 13.581 15.5773 14.3199 14.9486 14.9486C14.3199 15.5773 13.581 16.0764 12.7319 16.4458C11.8829 16.8153 10.9722 17 10 17Z" fill="#9AA7B3"></path></svg></div></div><div class="L-ImageTooltip"><div class="L-ImageTooltip__main"><button class="L-ImageTooltip__delete"><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.3499 3.86991H12.3599C12.1299 2.19991 10.7099 0.909912 8.98989 0.909912C7.26989 0.909912 5.84989 2.20991 5.61989 3.86991H1.63989C1.22989 3.86991 0.889893 4.20991 0.889893 4.61991C0.889893 5.02991 1.22989 5.36991 1.63989 5.36991H2.23989V14.6899C2.23989 15.9399 3.24989 16.9499 4.50989 16.9499H13.5099C14.7599 16.9499 15.7799 15.9399 15.7799 14.6899V5.36991H16.3699C16.7799 5.36991 17.1199 5.02991 17.1199 4.61991C17.1199 4.20991 16.7699 3.86991 16.3499 3.86991ZM14.2599 14.6899C14.2599 15.1099 13.9199 15.4499 13.4899 15.4499H4.48989C4.06989 15.4499 3.71989 15.1099 3.71989 14.6899V5.40991H14.2499V14.6899H14.2599ZM8.98989 2.41991C9.88989 2.41991 10.6399 3.03991 10.8499 3.87991H7.12989C7.33989 3.03991 8.08989 2.41991 8.98989 2.41991Z" fill="#50555C"></path><path d="M5.59985 14.2898C6.00985 14.2898 6.34985 13.9498 6.34985 13.5398V7.32983C6.34985 6.91983 6.00985 6.57983 5.59985 6.57983C5.18985 6.57983 4.84985 6.91983 4.84985 7.32983V13.5398C4.84985 13.9498 5.18985 14.2898 5.59985 14.2898Z" fill="#50555C"></path><path d="M8.98999 14.2898C9.39999 14.2898 9.73999 13.9498 9.73999 13.5398V7.32983C9.73999 6.91983 9.39999 6.57983 8.98999 6.57983C8.57999 6.57983 8.23999 6.91983 8.23999 7.32983V13.5398C8.23999 13.9498 8.57999 14.2898 8.98999 14.2898Z" fill="#50555C"></path><path d="M12.3999 14.2898C12.8099 14.2898 13.1499 13.9498 13.1499 13.5398V7.32983C13.1499 6.91983 12.8099 6.57983 12.3999 6.57983C11.9899 6.57983 11.6499 6.91983 11.6499 7.32983V13.5398C11.6499 13.9498 11.9799 14.2898 12.3999 14.2898Z" fill="#50555C"></path></svg></button><div class="L-ImageTooltip__color"><button class="L-ImageTooltip__colorBtn"><div class="L-ImageTooltip__colorParts"><div class="L-ImageTooltip__colorPartItem L-First"></div></div><div class="L-ImageTooltip__colorArrow"></div></button><div class="L-ImageTooltip__colorDropdown L-Hidden"><button class="L-ImageTooltip__colorSelect" data-slot-id="0"><div class="L-ImageTooltip__colorSelectIcon L-Yellow"></div><div class="L-ImageTooltip__colorSelectText L-Yellow">Important</div></button><button class="L-ImageTooltip__colorSelect" data-slot-id="1"><div class="L-ImageTooltip__colorSelectIcon L-Mint"></div><div class="L-ImageTooltip__colorSelectText L-Mint">Important</div></button><button class="L-ImageTooltip__colorSelect" data-slot-id="2"><div class="L-ImageTooltip__colorSelectIcon L-Orange"></div><div class="L-ImageTooltip__colorSelectText L-Orange">Important</div></button><button class="L-ImageTooltip__colorSelect" data-slot-id="3"><div class="L-ImageTooltip__colorSelectIcon L-Purple"></div><div class="L-ImageTooltip__colorSelectText L-Purple">Important</div></button><button class="L-ImageTooltip__colorSelect" data-slot-id="4"><div class="L-ImageTooltip__colorSelectIcon L-Blue"></div><div class="L-ImageTooltip__colorSelectText L-Blue">Important</div></button><button class="L-ImageTooltip__colorSelect" data-slot-id="5"><div class="L-ImageTooltip__colorSelectIcon L-Pink"></div><div class="L-ImageTooltip__colorSelectText L-Pink">Important</div></button></div></div><button class="L-ImageTooltip__thread"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8099 2.01001C13.6399 2.01001 14.3099 2.68001 14.3099 3.51001V9.38001C14.3099 10.21 13.6399 10.88 12.8099 10.88H10.8999C10.3999 10.88 9.92994 11.13 9.64994 11.55L7.99994 14.04L6.34994 11.56C6.06994 11.14 5.59994 10.89 5.09994 10.89H3.18994C2.35994 10.89 1.68994 10.22 1.68994 9.39001V3.51001C1.68994 2.68001 2.35994 2.01001 3.18994 2.01001H12.8099ZM12.8099 0.51001H3.18994C1.52994 0.51001 0.189941 1.85001 0.189941 3.51001V9.38001C0.189941 11.04 1.52994 12.38 3.18994 12.38H5.09994L7.03994 15.29C7.26994 15.63 7.63994 15.81 8.00994 15.81C8.37994 15.81 8.74994 15.64 8.97994 15.29L10.9199 12.38H12.8299C14.4899 12.38 15.8299 11.04 15.8299 9.38001V3.51001C15.8099 1.85001 14.4699 0.51001 12.8099 0.51001Z" fill="#50555C"></path><path d="M4.86995 5.52002C4.35995 5.52002 3.94995 5.93002 3.94995 6.44002C3.94995 6.95002 4.35995 7.36002 4.86995 7.36002C5.37995 7.36002 5.78995 6.95002 5.78995 6.44002C5.78995 5.93002 5.37995 5.52002 4.86995 5.52002Z" fill="#50555C"></path><path d="M7.99983 5.52002C7.48983 5.52002 7.07983 5.93002 7.07983 6.44002C7.07983 6.95002 7.48983 7.36002 7.99983 7.36002C8.50983 7.36002 8.91983 6.95002 8.91983 6.44002C8.91983 5.93002 8.50983 5.52002 7.99983 5.52002Z" fill="#50555C"></path><path d="M11.12 5.52002C10.61 5.52002 10.2 5.93002 10.2 6.44002C10.2 6.95002 10.61 7.36002 11.12 7.36002C11.63 7.36002 12.04 6.95002 12.04 6.44002C12.04 5.93002 11.63 5.52002 11.12 5.52002Z" fill="#50555C"></path></svg></button><div class="L-ImageTooltip__border"></div><a href="https://getliner.com/my-highlights" target="_blank" class="L-ImageTooltip__home"><div class="L-ImageTooltip__home--img"></div><div class="L-ImageTooltip__home--redDot"></div></a></div></div></div><div class="liner-scroll-points-container"></div></body>
+          <div class="liner-mini-tooltip liner-disabled liner-page-text-only-tooltip">
+              <div class="liner-page-tooltip-body-point"></div>
+              <div class="liner-page-tooltip-body">
+                  <span>Select text only</span>
+              </div>
+          </div>
+          <div class="liner-mini-tooltip liner-enabled liner-maintain-selection">
+              <span class="liner-color-yellow liner-mini-color-circle liner-save-button" data-slot-id="0" style="background-color: rgb(255, 255, 131);"><div class="liner-color-label">Important</div></span>
+              <span class="liner-color-green liner-mini-color-circle liner-save-button" data-slot-id="1" style="background-color: rgb(166, 255, 233);"><div class="liner-color-label">More important</div></span>
+              <span class="liner-color-orange liner-mini-color-circle liner-save-button" data-slot-id="2" style="background-color: rgb(255, 199, 186);"><div class="liner-color-label">Most Important</div></span>
+              <span class="liner-color-violet liner-mini-color-circle liner-save-button" data-slot-id="3" style="background-color: rgb(217, 195, 255);"><div class="liner-color-label">Key phrase</div></span>
+              <span class="liner-color-blue liner-mini-color-circle liner-save-button" data-slot-id="4" style="background-color: rgb(184, 238, 255);"><div class="liner-color-label">Agree</div></span>
+              <span class="liner-color-pink liner-mini-color-circle liner-save-button" data-slot-id="5" style="background-color: rgb(255, 208, 239);"><div class="liner-color-label">Disagree</div></span>
+          </div>
+          <div class="liner-mini-button">
+            <a class="liner-mb liner-save-button "></a>
+          </div>
+          <div class="L-GlobalModal"></div><div class="L-OptOutContainerRoot"></div><div class="L-ToastTurnOff"></div><div class="L-LINERChatRoot"><div class="sc-dwalKd iHHZdr L-LINERChat"><div class="sc-cyRcrZ gyrmGj"><div class="sc-hgRRfv dxesLJ"><div data-label="close" class="sc-bOQTJJ ghBIpU"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10.8833 9.99999L17 3.88333C17.2416 3.64166 17.2416 3.24166 17 2.99999C16.7583 2.75833 16.3583 2.75833 16.1166 2.99999L9.99998 9.11666L3.88331 2.99166C3.64164 2.74999 3.24164 2.74999 2.99998 2.99166C2.75831 3.23333 2.75831 3.63333 2.99998 3.87499L9.11664 9.99999L2.99998 16.1167C2.75831 16.3583 2.75831 16.7583 2.99998 17C3.12498 17.125 3.28331 17.1833 3.44164 17.1833C3.59998 17.1833 3.75831 17.125 3.88331 17L9.99998 10.8833L16.1166 17C16.2416 17.125 16.4 17.1833 16.5583 17.1833C16.7166 17.1833 16.875 17.125 17 17C17.2416 16.7583 17.2416 16.3583 17 16.1167L10.8833 9.99999Z" fill="#4B5966"></path></svg></div></div><button data-tab="copilot" class="sc-kUdmhA cHIakx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M10.0112 3C5.59618 3 2 6.60213 2 11.0244C2 15.4467 5.59618 19.0488 10.0112 19.0488C14.4261 19.0488 18.0223 15.4467 18.0223 11.0244C18.0223 6.60213 14.4308 3 10.0112 3ZM10.0112 14.9854C7.83391 14.9854 6.05676 13.2099 6.05676 11.0244C6.05676 8.8389 7.82926 7.06347 10.0112 7.06347C12.1931 7.06347 13.9656 8.8389 13.9656 11.0244C13.9656 13.2099 12.1931 14.9854 10.0112 14.9854ZM19.5622 16.6117C18.2177 16.6117 17.1244 17.7021 17.1244 19.0535C17.1244 20.4049 18.2131 21.4953 19.5622 21.4953C20.9114 21.4953 22 20.4049 22 19.0535C22 17.7021 20.9114 16.6117 19.5622 16.6117Z" fill="#080A0D"></path></svg><span data-role="tooltip" class="sc-emIrwa jdjSlR">Copilot</span></button><button data-tab="event" class="sc-kUdmhA cHIakx"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.7103 2.32884L20.502 7.00384C20.7617 7.14134 20.9374 7.32849 21.0291 7.5653C21.1208 7.80211 21.1666 8.03509 21.1666 8.26426V18.8747C21.1666 19.2413 21.0291 19.5622 20.7541 19.8372C20.4791 20.1122 20.1583 20.2497 19.7916 20.2497H4.20825C3.84159 20.2497 3.52075 20.1122 3.24575 19.8372C2.97075 19.5622 2.83325 19.2413 2.83325 18.8747V8.26426C2.83325 8.03509 2.8829 7.80211 2.98221 7.5653C3.08152 7.32849 3.25339 7.14134 3.49784 7.00384L11.2895 2.32884C11.5034 2.20662 11.7402 2.14551 11.9999 2.14551C12.2596 2.14551 12.4964 2.20662 12.7103 2.32884ZM11.9999 12.5955L19.6999 8.08092L11.9999 3.45176L4.29992 8.08092L11.9999 12.5955Z" fill="#9AA7B3"></path></svg><span data-role="tooltip" class="sc-emIrwa jdjSlR">Rewards</span><span class="sc-gRtvSG bsyHh"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#FF4D4D"></circle><path d="M10.9272 4.45801V11.9997H9.573L6.2605 7.20801H6.198V11.9997H4.6355V4.45801H6.0105L9.30216 9.24967H9.37508V4.45801H10.9272Z" fill="white"></path></svg></span></button><div class="sc-hgRRfv dxesLJ"><a href="https://getliner.com/settings/extension" target="_blank" data-label="settings" class="sc-fFlnrN TmaYG"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.1 9.22043C18.29 9.22043 17.55 7.94042 18.45 6.37042C18.97 5.46042 18.66 4.30042 17.75 3.78042L16.02 2.79042C15.23 2.32042 14.21 2.60042 13.74 3.39042L13.63 3.58042C12.73 5.15042 11.25 5.15042 10.34 3.58042L10.23 3.39042C9.78 2.60042 8.76 2.32042 7.97 2.79042L6.24 3.78042C5.33 4.30042 5.02 5.47042 5.54 6.38042C6.45 7.94042 5.71 9.22043 3.9 9.22043C2.86 9.22043 2 10.0704 2 11.1204V12.8804C2 13.9204 2.85 14.7804 3.9 14.7804C5.71 14.7804 6.45 16.0604 5.54 17.6304C5.02 18.5404 5.33 19.7004 6.24 20.2204L7.97 21.2104C8.76 21.6804 9.78 21.4004 10.25 20.6104L10.36 20.4204C11.26 18.8504 12.74 18.8504 13.65 20.4204L13.76 20.6104C14.23 21.4004 15.25 21.6804 16.04 21.2104L17.77 20.2204C18.68 19.7004 18.99 18.5304 18.47 17.6304C17.56 16.0604 18.3 14.7804 20.11 14.7804C21.15 14.7804 22.01 13.9304 22.01 12.8804V11.1204C22 10.0804 21.15 9.22043 20.1 9.22043ZM12 15.2504C10.21 15.2504 8.75 13.7904 8.75 12.0004C8.75 10.2104 10.21 8.75042 12 8.75042C13.79 8.75042 15.25 10.2104 15.25 12.0004C15.25 13.7904 13.79 15.2504 12 15.2504Z" fill="#9AA7B3"></path></svg></a><span data-role="tooltip" class="sc-emIrwa jdjSlR">Settings</span></div></div><div class="sc-epqpcT lapztR"><div class="sc-eXsaLi lgcbvu"><div data-label="close" class="sc-bOQTJJ ghBIpU"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10.8833 9.99999L17 3.88333C17.2416 3.64166 17.2416 3.24166 17 2.99999C16.7583 2.75833 16.3583 2.75833 16.1166 2.99999L9.99998 9.11666L3.88331 2.99166C3.64164 2.74999 3.24164 2.74999 2.99998 2.99166C2.75831 3.23333 2.75831 3.63333 2.99998 3.87499L9.11664 9.99999L2.99998 16.1167C2.75831 16.3583 2.75831 16.7583 2.99998 17C3.12498 17.125 3.28331 17.1833 3.44164 17.1833C3.59998 17.1833 3.75831 17.125 3.88331 17L9.99998 10.8833L16.1166 17C16.2416 17.125 16.4 17.1833 16.5583 17.1833C16.7166 17.1833 16.875 17.125 17 17C17.2416 16.7583 17.2416 16.3583 17 16.1167L10.8833 9.99999Z" fill="#4B5966"></path></svg></div><a href="https://getliner.com/" target="_blank" class="sc-gEkIjz gjCrZH"><div class="sc-hoLEA cVfEwu"><svg width="62" height="14" viewBox="0 0 62 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H3.96V10.86H10.64V14H0V0Z" fill="#409EFF"></path><path d="M12.207 0H16.167V14H12.207V0Z" fill="#409EFF"></path><path d="M32.3044 0V14H29.0444L22.8644 6.54V14H18.9844V0H22.2444L28.4244 7.46V0H32.3044Z" fill="#409EFF"></path><path d="M46.3377 10.94V14H35.0977V0H46.0777V3.06H39.0177V5.42H45.2377V8.38H39.0177V10.94H46.3377Z" fill="#409EFF"></path><path d="M54.6552 10.28H52.4952V14H48.5352V0H54.9352C56.2018 0 57.3018 0.213334 58.2352 0.64C59.1685 1.05333 59.8885 1.65333 60.3952 2.44C60.9018 3.21333 61.1552 4.12667 61.1552 5.18C61.1552 6.19333 60.9152 7.08 60.4352 7.84C59.9685 8.58667 59.2952 9.17333 58.4152 9.6L61.4352 14H57.1952L54.6552 10.28ZM57.1552 5.18C57.1552 4.52667 56.9485 4.02 56.5352 3.66C56.1218 3.3 55.5085 3.12 54.6952 3.12H52.4952V7.22H54.6952C55.5085 7.22 56.1218 7.04667 56.5352 6.7C56.9485 6.34 57.1552 5.83333 57.1552 5.18Z" fill="#409EFF"></path></svg></div><div class="sc-bOhtcR fTrRba">Copilot</div></a><a href="https://getliner.com/settings/extension" target="_blank" data-label="settings" class="sc-fFlnrN TmaYG"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.1 9.22043C18.29 9.22043 17.55 7.94042 18.45 6.37042C18.97 5.46042 18.66 4.30042 17.75 3.78042L16.02 2.79042C15.23 2.32042 14.21 2.60042 13.74 3.39042L13.63 3.58042C12.73 5.15042 11.25 5.15042 10.34 3.58042L10.23 3.39042C9.78 2.60042 8.76 2.32042 7.97 2.79042L6.24 3.78042C5.33 4.30042 5.02 5.47042 5.54 6.38042C6.45 7.94042 5.71 9.22043 3.9 9.22043C2.86 9.22043 2 10.0704 2 11.1204V12.8804C2 13.9204 2.85 14.7804 3.9 14.7804C5.71 14.7804 6.45 16.0604 5.54 17.6304C5.02 18.5404 5.33 19.7004 6.24 20.2204L7.97 21.2104C8.76 21.6804 9.78 21.4004 10.25 20.6104L10.36 20.4204C11.26 18.8504 12.74 18.8504 13.65 20.4204L13.76 20.6104C14.23 21.4004 15.25 21.6804 16.04 21.2104L17.77 20.2204C18.68 19.7004 18.99 18.5304 18.47 17.6304C17.56 16.0604 18.3 14.7804 20.11 14.7804C21.15 14.7804 22.01 13.9304 22.01 12.8804V11.1204C22 10.0804 21.15 9.22043 20.1 9.22043ZM12 15.2504C10.21 15.2504 8.75 13.7904 8.75 12.0004C8.75 10.2104 10.21 8.75042 12 8.75042C13.79 8.75042 15.25 10.2104 15.25 12.0004C15.25 13.7904 13.79 15.2504 12 15.2504Z" fill="#9AA7B3"></path></svg></a></div><div class="sc-eHsDsR cGeFPV"><div class="sc-jdkBTo hzzfFT"><span class="sc-cspYLC gbYnOT">Upgrade to Pro</span><div class="sc-fmzyuX gclwqi">&nbsp;</div><div class="sc-fmzyuX gclwqi">for unlimited access to GPT-3.5 and GPT-4.</div></div></div><div class="sc-gZfzYS fzfHjh"><div class="sc-bJBgwP kKoLmU"><div class="sc-dGCmGc jFQyBv"><div class="sc-fAGzit gCImHB">SQL Worksheet</div><div class="sc-bkSUFG dINpyG">livesql.oracle.com</div></div><div class="sc-deXhhX kVAsiA"><div></div><div data-role="dim" class="sc-imwsjW cMsSUm"></div></div></div></div><form class="sc-epALIP goawbe"><textarea placeholder="Ask a follow-up question" class="sc-iLsKjm hEkCnf"></textarea><div class="sc-bfhvDw WLtyL"><div class="sc-cMa-dbN fNjIdA"><button class="sc-fUBkdm keJUoq">GPT-3.5</button><button class="sc-hBtRBD jiIiBN"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M3.74226 6.4525L4.63713 8.3835C4.78037 8.69258 5.21975 8.69258 5.36298 8.3835L6.25782 6.4525C6.29764 6.36658 6.36664 6.29757 6.45256 6.25776L8.38356 5.36292C8.69264 5.21969 8.69265 4.78031 8.38356 4.63707L6.45256 3.7422C6.36664 3.70239 6.29764 3.63338 6.25782 3.54746L5.36298 1.61646C5.21975 1.30738 4.78037 1.30737 4.63713 1.61646L3.74226 3.54746C3.70245 3.63338 3.63344 3.70238 3.54753 3.7422L1.61652 4.63707C1.30744 4.78031 1.30744 5.21969 1.61653 5.36292L3.54752 6.25776C3.63344 6.29757 3.70245 6.36658 3.74226 6.4525Z" fill="url(#paint0_linear_265_85)"></path><defs><lineargradient id="paint0_linear_265_85" x1="0.833374" y1="5.08168" x2="9.16671" y2="5.08168" gradientUnits="userSpaceOnUse"><stop stop-color="#0578FF"></stop><stop offset="1" stop-color="#DB00FF"></stop></lineargradient></defs></svg><span>GPT-4</span></button></div><button class="sc-hYmls nnzKS"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M14.9402 14.875L13.3853 16.4298C13.2238 16.5914 13.1449 16.7925 13.1486 17.0333C13.1524 17.2741 13.235 17.4753 13.3965 17.6368C13.5581 17.7984 13.7617 17.8791 14.0075 17.8791C14.2533 17.8791 14.4557 17.7984 14.6148 17.6368L17.5135 14.7381C17.7244 14.5272 17.8298 14.2812 17.8298 14C17.8298 13.7188 17.7244 13.4728 17.5135 13.2619L14.6036 10.3519C14.442 10.1904 14.2409 10.1096 14.0001 10.1096C13.7593 10.1096 13.5581 10.1904 13.3965 10.3519C13.235 10.5135 13.1542 10.7171 13.1542 10.9629C13.1542 11.2087 13.235 11.4111 13.3965 11.5702L14.9402 13.125H10.5001C10.2521 13.125 10.0443 13.2089 9.87664 13.3767C9.70894 13.5445 9.62508 13.7524 9.62508 14.0004C9.62508 14.2484 9.70894 14.4562 9.87664 14.6237C10.0443 14.7912 10.2521 14.875 10.5001 14.875H14.9402ZM14.002 25.0833C12.4691 25.0833 11.0282 24.7924 9.67939 24.2106C8.33055 23.6289 7.15725 22.8393 6.1595 21.842C5.16173 20.8447 4.37182 19.6719 3.78979 18.3237C3.20776 16.9754 2.91675 15.5349 2.91675 14.0019C2.91675 12.469 3.20764 11.0282 3.78942 9.67933C4.37119 8.33049 5.16073 7.15719 6.15804 6.15944C7.15536 5.16167 8.32815 4.37176 9.67639 3.78973C11.0246 3.2077 12.4652 2.91669 13.9981 2.91669C15.531 2.91669 16.9719 3.20758 18.3207 3.78936C19.6696 4.37113 20.8429 5.16067 21.8406 6.15798C22.8384 7.1553 23.6283 8.32809 24.2103 9.67633C24.7923 11.0245 25.0834 12.4651 25.0834 13.998C25.0834 15.531 24.7925 16.9718 24.2107 18.3207C23.6289 19.6695 22.8394 20.8428 21.8421 21.8405C20.8447 22.8383 19.672 23.6282 18.3237 24.2103C16.9755 24.7923 15.5349 25.0833 14.002 25.0833ZM14.0001 23.3333C16.6056 23.3333 18.8126 22.4292 20.6209 20.6208C22.4292 18.8125 23.3334 16.6055 23.3334 14C23.3334 11.3944 22.4292 9.18749 20.6209 7.37916C18.8126 5.57083 16.6056 4.66666 14.0001 4.66666C11.3945 4.66666 9.18755 5.57083 7.37922 7.37916C5.57089 9.18749 4.66672 11.3944 4.66672 14C4.66672 16.6055 5.57089 18.8125 7.37922 20.6208C9.18755 22.4292 11.3945 23.3333 14.0001 23.3333Z" fill="#B4C0CC"></path></svg></button></div></form></div><div class="L-SidebarModalRoot"></div></div></div><div class="L-Toast"></div><div class="L-CopilotRoot"><div class="sc-eiQriw hducTf" style="top: 164px;"><div class="sc-gcUDKN eoRkrr"><div class="sc-la-DkbX iAheIa"><div data-role="copilot-entry" class="sc-harTkY iWIVNh"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_110_413)"><path d="M4.80843 0.47998C2.15709 0.47998 0 2.63707 0 5.28841C0 7.93975 2.15709 10.0968 4.80843 10.0968C7.45977 10.0968 9.61686 7.93975 9.61686 5.28841C9.61686 2.63707 7.45977 0.47998 4.80843 0.47998ZM4.80843 7.66006C3.5 7.66006 2.43678 6.59684 2.43678 5.28841C2.43678 3.97998 3.5 2.91676 4.80843 2.91676C6.11686 2.91676 7.18008 3.97998 7.18008 5.28841C7.18008 6.59684 6.11686 7.66006 4.80843 7.66006ZM12 10.0968C12 10.9034 11.3448 11.5585 10.5383 11.5585C9.7318 11.5585 9.07663 10.9034 9.07663 10.0968C9.07663 9.29032 9.7318 8.63515 10.5383 8.63515C11.3448 8.63515 12 9.29032 12 10.0968Z" fill="white"></path></g><defs><clippath id="clip0_110_413"><rect width="12" height="12" fill="white"></rect></clippath></defs></svg><div data-id="scan-tooltip" class="sc-xwuxA WZDHp">Click to check<br>the summary of this page</div><div class="sc-eKtvVk ktLCoa">Summary +</div></div><div data-id="ask-ai" class="sc-iUwfNp jAmMry"><div class="sc-fHCFno jFrRIZ"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.36655 5.43327C5.26655 5.33327 5.21655 5.21105 5.21655 5.0666C5.21655 4.92216 5.26655 4.79994 5.36655 4.69993L7.64989 2.4166C7.70544 2.36105 7.761 2.32216 7.81655 2.29993C7.87211 2.27771 7.93322 2.2666 7.99989 2.2666C8.05544 2.2666 8.11378 2.27771 8.17489 2.29993C8.236 2.32216 8.29433 2.36105 8.34989 2.4166L10.6332 4.69993C10.7332 4.79994 10.7832 4.92216 10.7832 5.0666C10.7832 5.21105 10.7332 5.33327 10.6332 5.43327C10.5332 5.53327 10.411 5.58327 10.2666 5.58327C10.1221 5.58327 9.99989 5.53327 9.89989 5.43327L7.99989 3.53327L6.09989 5.43327C5.99989 5.53327 5.87766 5.58327 5.73322 5.58327C5.58877 5.58327 5.46655 5.53327 5.36655 5.43327ZM7.99989 13.7999C7.94433 13.7999 7.886 13.7888 7.82489 13.7666C7.76378 13.7444 7.70544 13.7055 7.64989 13.6499L5.36655 11.3666C5.26655 11.2666 5.21655 11.1444 5.21655 10.9999C5.21655 10.8555 5.26655 10.7333 5.36655 10.6333C5.46655 10.5333 5.58877 10.4833 5.73322 10.4833C5.87766 10.4833 5.99989 10.5333 6.09989 10.6333L7.99989 12.5333L9.89989 10.6333C9.99989 10.5333 10.1221 10.4833 10.2666 10.4833C10.411 10.4833 10.5332 10.5333 10.6332 10.6333C10.7332 10.7333 10.7832 10.8555 10.7832 10.9999C10.7832 11.1444 10.7332 11.2666 10.6332 11.3666L8.34989 13.6499C8.29433 13.7055 8.23878 13.7444 8.18322 13.7666C8.12766 13.7888 8.06655 13.7999 7.99989 13.7999Z" fill="#647280"></path></svg></div></div><div data-id="opt-out" class="sc-doqphf kflXXf"><div class="sc-hKinHC hgOhRL"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M7.99944 7.99996C7.85771 7.99996 7.73898 7.95204 7.64326 7.85621C7.54754 7.76037 7.49967 7.64163 7.49967 7.49997V2.11536C7.49967 1.97369 7.54761 1.85494 7.64347 1.75911C7.73935 1.66327 7.85815 1.61536 7.99987 1.61536C8.14161 1.61536 8.26034 1.66327 8.35606 1.75911C8.45178 1.85494 8.49964 1.97369 8.49964 2.11536V7.49997C8.49964 7.64163 8.45171 7.76037 8.35584 7.85621C8.25996 7.95204 8.14116 7.99996 7.99944 7.99996ZM8.00002 13.6666C7.21346 13.6666 6.47659 13.5179 5.78941 13.2204C5.10223 12.923 4.50309 12.5187 3.99197 12.0076C3.48087 11.4965 3.07661 10.8975 2.77917 10.2105C2.48173 9.52345 2.33301 8.78661 2.33301 7.99996C2.33301 7.335 2.44732 6.69163 2.67596 6.06984C2.90459 5.44804 3.23216 4.8833 3.65866 4.37561C3.74954 4.25852 3.8652 4.20275 4.00566 4.20831C4.14611 4.21386 4.2712 4.2715 4.38091 4.38121C4.47375 4.47405 4.51462 4.58586 4.50351 4.71662C4.4924 4.84739 4.44411 4.97132 4.35864 5.08841C4.02445 5.49695 3.76996 5.95187 3.59517 6.45316C3.42039 6.95443 3.33299 7.47003 3.33299 7.99996C3.33299 9.29996 3.78577 10.4027 4.69132 11.3083C5.59688 12.2138 6.69966 12.6666 7.99966 12.6666C9.29966 12.6666 10.4024 12.2138 11.308 11.3083C12.2135 10.4027 12.6663 9.29996 12.6663 7.99996C12.6663 7.46519 12.5806 6.94496 12.4093 6.43927C12.2379 5.93357 11.9783 5.47645 11.6304 5.06789C11.545 4.95765 11.4967 4.8377 11.4856 4.70806C11.4744 4.57842 11.515 4.46761 11.6073 4.37561C11.7108 4.27218 11.8323 4.21877 11.9721 4.21536C12.1118 4.21193 12.2278 4.26535 12.3201 4.37561C12.7535 4.8833 13.0862 5.4462 13.3182 6.06431C13.5503 6.68241 13.6663 7.32762 13.6663 7.99996C13.6663 8.78661 13.5176 9.52345 13.2201 10.2105C12.9227 10.8975 12.5184 11.4965 12.0073 12.0076C11.4962 12.5187 10.8972 12.923 10.2103 13.2204C9.52334 13.5179 8.78659 13.6666 8.00002 13.6666Z" fill="#9AA7B3"></path></svg></div></div></div></div></div></div><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+  div.grammarly-desktop-integration {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+
+  div.grammarly-desktop-integration:before {
+    content: attr(data-content);
+  }
+</style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
